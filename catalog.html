@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>HTML Academy: Седона</title>
+  </head>
+  <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="blank.html">Информация</a></li>
+        <li><a href="blank.html">Фото и видео</a></li>
+        <li><a href="blank.html">Карта штата</a></li>
+        <li><a href="catalog.html">Гостиницы</a></li>
+      </ul>
+      <a hfer="index.html"><img src="img/index-logo.svg" alt="Логотип Седона"></a>
+    </nav>
+  </header>
+  <main>
+      <h1>Варианты размещения</h1>
+        <section>
+             <h2>Фильтр помещений</h2>
+             <form method="get" action="https://echo.htmlacademy.ru">
+                <fieldset>
+                    <legend>Инфрастуктура:</legend>
+                    <ul>
+                        <li>
+                           <input type="checkbox" name="swimming-pool" id="filter-swimming-pool" checked>
+                           <label for="filter-swimming-pool">Бассейн</label>
+                        </li>
+                        <li>
+                           <input type="checkbox" name="parking" id="filter-parking">
+                           <label for="filter-parking">Парковка</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="wifi" id="filter-wifi">
+                            <label for="filter-wifi">Wi-fi</label>
+                         </li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>Тип жилья:</legend>
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="hotel" id="filter-hotel" checked>
+                            <label for="filter-hotel">Гостинница</label>
+                         </li>
+                         <li>
+                            <input type="checkbox" name="motel" id="filter-motel" checked>
+                            <label for="filter-motel">Мотель</label>
+                         </li>
+                         <li>
+                            <input type="checkbox" name="apartments" id="filter-apartments" checked>
+                            <label for="filter-apartments">Апартаменты</label>
+                         </li>
+                    </ul>
+                </fieldset>
+                <fieldset>
+                    <legend>Стоимость в сутки (р):</legend>
+                    <!-- Форма с полузнком -->
+                </fieldset>
+                <button type="submit">Показать</button>            
+            </form>
+        </section>
+        <h2>Результаты поиска</h2>
+        <section>
+                <h3>Найдено:3</h3> <!--Тут видимо 3 должна быть переменной, в зависимости от выбранных параметров.Это позже делаем?Или вообще не делаем?-->
+                <form>
+                    <legend>Сортировка:</legend>
+                    <ul>
+                        <li>
+                            <input type="radio" name="for-price" id="filter-for-price">
+                            <label for="filter-for-price">По цене</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="for-type" id="filter-for-type">
+                            <label for="filter-for-type">По типу</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="for-rating" id="filter-for-rating">
+                            <label for="filter-for-rating">По рейтингу</label>
+                        </li><!--Эти кнопки потом через CSS задаются, чтобы нажимать не на кнопку рядом, а на сам текст? -->
+                    </ul>
+                    <button type="button"><img <img src="img/arrow-up.svg" alt="arrow-up"></button>
+                    <button type="button"><img <img src="img/arrow-down.svg" alt="arrow-down"></button><!--Эти кнопки должны быть в форме или не обязательно?-->
+                </form>
+        </section>
+        <section>
+            <h3>Amara resort & spa</h3>
+            <img src="img/product-1.jpg" width="135" height="90" alt="Amara resort & spa">
+            <p>Гостиница</p>
+            <p>от 4000 р.</p>
+            <button type="button">Подробнее</button>
+            <button type="button">Забронировать</button>
+            <img src="img/4-stars.jpg" alt="4 stars"><!--Я могу задать звездочки отдельными картинками?
+                 или они должны быть одинаковые и изменяться количество?-->
+            <p>Рейтинг: 8,5</p>
+        </section>
+        <section>
+            <h3>Desert quail inn</h3>
+            <img src="img/product-2.jpg" width="135" height="90" alt="Desert quail inn">
+            <p>Мотель</p>
+            <p>от 3000 р.</p>
+            <button type="button">Подробнее</button>
+            <button type="button">Забронировать</button>
+            <img src="img/3-stars.jpg" alt="3 stars">
+            <p>Рейтинг: 8,9</p>
+        </section>
+        <section>
+            <h3>Villas at poco diablo</h3>
+            <img src="img/product-3.jpg" width="135" height="90" alt="Amara resort & spa">
+            <p>Апартаменты</p>
+            <p>от 2000 р.</p>
+            <button type="button">Подробнее</button>
+            <button type="button">Забронировать</button>
+            <img src="img/2-stars.jpg" alt="2 stars">
+            <p>Рейтинг: 9,2</p>
+        </section>
+  </main>
+  <footer>
+    <section>
+      <h2>Контактные данные</h2>
+      <p>
+      #visitsedona <br>
+      Тел: <a href="tel:+74956660166">+7 (495) 666-01-66</a>
+      </p>
+    </section>
+    <section>
+      <h2>Соцсети</h2>
+      <ul>
+        <li>
+        <a href="#">TWitter</a>
+        </li>
+        <li>
+        <a href="#">Фейсбук</a>
+        </li>
+        <li>
+        <a href="#">Youtube</a>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <p>
+        Website by
+        <a href="https://htmlacademy.ru"><img src="img/#" alt="Лого htmlacademy"></a>
+      </p>
+    </section>
+  </footer>
+  </body>
+</html>
