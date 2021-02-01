@@ -1,112 +1,111 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html class="page" lang="ru">
   <head>
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,700&amp;subset=latin,cyrillic;display=swap">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
-  <body>
-  <header>
-    <nav>
-      <ul>
+  <header class="main-header">
+    <nav class="main-navigation">
+      <ul class="site-navigation">
         <li><a href="blank.html">Информация</a></li>
         <li><a href="blank.html">Фото и видео</a></li>
         <li><a href="blank.html">Карта штата</a></li>
         <li><a href="catalog.html">Гостиницы</a></li>
       </ul>
-      <a hfer="index.html"><img src="img/logo.png" width="130" height="70" alt="Логотип Седона"></a>
+      <a class="main-header-logo" hfer="index.html"><img src="img/logo.svg" width="130" height="70" alt="Логотип Седона"></a>
     </nav>
   </header>
-  <main>
     <h1>Седона</h1>
-    <section>
-      <img src="img/welcome.png" width="456.65" height="350.88" alt="Надпись Седона"> <!--Чего-то мне не нравятся ее размеры.))Я все верно сделал?-->
+    <section class="splash-screen">
+      <img src="img/welcome.svg" width="457" height="351" alt="Надпись Седона">
     </section>
-    <section>
+    <section class="introduction">
     <p>Седона-небольшой городок в Аризоне,<br>заслуживающий большего!</p>
-    <p>Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
+    <p class="introduction-inscription">Рассмотрим 5 причин, по которым Седона круче, чем Гранд Каньон!</p>
     </section>
       <h2>Почему Седона крутой город</h2>
-      <section>      
+      <section class="features-1">      
         <h3>Настоящий городок</h3>
           <p>-№1-</p>
           <p>Седона - не аттрацкион для туристов, там течёт своя жизнь </p>
           <img src="img/cafe.jpg" width="800" height="256" alt="Кафе Седона">
       </section>
-      <section>
-        <ul>
-          <li>
+      <section class="features-2">
             <img src="img/house.svg" width="75" height="70" alt="Дом">
             <h3>Жильё</h3> 
             <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
           </li>
-          <li>
+          <li class="features-2-item">
             <img src="img/burger.svg" width="75" height="70" alt="Бургер">
             <h3>Еда</h3>
             <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
           </li>
-          <li>
+          <li class="features-2-item">
             <img src="img/gift.svg" width="75" height="70" alt="Сувенир">
             <h3>Сувениры</h3>
             <p>Не только китайского, но и местного производства</p>
           </li>
         </ul>
       </section>
-      <section>
+      <section class="features-1">
           <h3>Там есть мост дьявола</h3>
           <p>-№2-</p>
           <p>Да, по нему можно пройти! Если конечно Вы осмелитесь</p>
           <img src="img/devil-bridge.jpg" width="800" height="256" alt="Мост дьявола">
       </section>
-      <section>
+      <section class="features-3">
           <h3>Небольшая площадь</h3>
           <p>-№3-</p>
           <p>Все достопримечательности находятся очень близко</p>
       </section>
-      <section>
+      <section class="features-3">
           <h3>Красивая дорога</h3>
           <p>-№4-</p>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
       </section>
-      <section>
+      <section class="features-3"> <!--посмотрел на код. показалось, что странно, что первая часть где жилье еда сувениры списком, а тут все на секции разделил. Это норм?)))или все же лучше единообразие сделать.-->
           <h3>Мало туристов</h3>
           <p>-№5-</p>
           <p>Большинство едет в Гранд Каньон и толпится там</p>
       </section>
-      <section>
+      <section class="appointment">
       <h2>Поиск гостинницы в седоне</h2>
       <p>Заинтересовались?</p>
-      <p>Укажите предполагаемые даты поездки,<br> и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
+      <p class="appointment-info">Укажите предполагаемые даты поездки,<br> и мы покажем Вам лучшие предложения гостиниц в Седоне</p>
       <img src="img/#" alt="Карта">
       <!-- Здесь будет форма записи-->
       </section>
   </main>
-  <footer>
-    <section>
+  <footer class="main-footer">
+    <section class="footer-contacts">
       <h2>Контактные данные</h2>
       <p>
       #visitsedona <br>
-      Тел: <a href="tel:+74956660166">+7 (495) 666-01-66</a>
+      Тел: <a class="footer-phone" href="tel:+74956660166">+7 (495) 666-01-66</a>
       </p>
     </section>
-    <section>
+    <section class="footer-social">
       <h2>Соцсети</h2>
       <ul>
         <li>
-        <a href="#">TWitter</a>
+        <a class="social-button" href="https://www.twitter.com"><img src="img/twitter.svg" width="17" height="15">TWitter</a>
         </li>
         <li>
-        <a href="#">Фейсбук</a>
+        <a class="social-button" href="https://www.facebook.com"><img src="img/fb.svg" width="12" height="22">Фейсбук</a>
         </li>
         <li>
-        <a href="#">Youtube</a>
+        <a class="social-button" href="https://www.youtube.com/"><img src="img/youtube.svg" width="20" height="16">Youtube</a>
         </li>
       </ul>
     </section>
     <section>
       <p>
         Website by
-        <a href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.png" width="113.98" height="39.78" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
+        <a class="htmlacademy" href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="114" height="40" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
       </p>
     </section>
   </footer>
