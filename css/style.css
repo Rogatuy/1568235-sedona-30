@@ -1,0 +1,175 @@
+/* Variables */
+:root {
+    --basic-black:#000000;
+    --basic-white:#ffffff;
+    --basic-dark:#333333;
+    --basic-light:#81B3D2;
+    --basic-dark-light:#669EC0;
+    --basic-extra-dark-light:#5496BD:
+    --basic-extra-blue:#f2f2f2;
+    --basic-extra-light:#eeeeee;
+    --basic-background-dark:#766357;
+    --basic-footer-background:rgba(255, 255, 255, 0.9);
+
+}
+
+/* Global */
+
+body /*Почему мы тут не задаем класс page-body а пишем просто боди?
+и кстати, почему-то не работает, если написать класс page-body и вписать эти параметры.
+можешь пояснить почему?*/ {
+    min-width:1280px;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", Arial, sans-serif;
+    font-size:14px;
+    font-weight:400;
+    line-height: 21px;
+    color:var(--basic-black);
+    text-transform: uppercase;
+    background-color: var(--basic-white);
+}
+
+/* Main-navigation */
+
+.main-navigation {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    color:var(--basic-black); /*нужно ли здесь прописывать цвет и бэкграунд, если он совпадает с page-body?
+    мне кажется, что не нужно, но в демке так делают*/
+    background-color: var(--basic-white);
+}
+
+
+.site-navigation {
+    list-style:none;
+}
+
+.site-navigation a {
+    text-decoration: none;
+    color:var (var(--basic-black))
+}
+
+.site-navigation a:hover {
+    color:var(--basic-light);
+}
+
+.site-navigation a:focus {
+    color:var(--basic-background-dark);
+}
+
+/* splash-screen */
+
+.splash-screen {
+    background-image: url("../img/background.jpg");
+    background-position: middle center;/*Почему-то не встает по середине, или в браузере просто не вижу этого?*/
+    background-repeat: no-repeat;
+     /*Пока затрудняюсь с вставкой второго фона, белой ломаной линии. 
+    если ее просто вставить, то все исчезает*/
+}
+
+/* Introduction */
+
+.introduction {
+    font-weight: 700;
+    font-size: 21px;
+    line-height: 26px;
+    }
+
+.introduction-inscription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 26px;
+    color:var(--basic-dark);
+}
+
+/*features*/
+
+.features-1 {
+    background-color: var(--basic-light);
+    }
+
+.features-1 h3 {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+    color:var(--basic-white)
+    }
+
+.features-1 p {
+    color:var(--basic-white)
+    }    
+
+.features-list {
+    list-style: none;
+}
+
+.features-2-item h3,
+.features-3 h3 {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+    color:var(--basic-black);
+}
+
+.features-2-item p {
+    font-weight: normal;
+    color:var(--basic-dark);
+}
+
+.features-3 {
+    background-color:var(--basic-extra-light);
+}
+
+.features-3 p {
+    color:var(--basic-dark)
+}
+
+/* Appointment*/
+
+.appointment p {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px;
+}
+
+p .appointment-info {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 24px; /*запутался я со шрифтами. вот эта фраза начинающаяся с укажите меньше, чем заинтересовались. отличается weight. у одного 400 у другого 700. но где задавать это не пойму.Обсудим на консультации*/
+}
+
+/* footer*/
+.main-footer {
+    background-color: var(--basic-footer-background);
+}
+
+.footer-contacts {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;  
+}
+
+.footer-phone {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    color:inherit;
+}
+
+.social-button {
+    color: var(--basic-white);
+    background-color: var(--basic-light);}
+
+.footer-social li{
+    list-style: none;
+}
+  
+.social-button:hover{
+    background-color: var(--basic-dark-light);
+}
+
+.social-button:focus {
+    background-color: var(--basic-extra-dark-light);
+}
