@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <title>HTML Academy: Седона</title>
     <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/PT+Sans:400,700&amp;subset=latin,cyrillic;display=swap">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body class="page-body">
   <header class="main-header">
@@ -60,61 +63,61 @@
                     <legend>Стоимость в сутки (р):</legend>
                     <!-- Форма с полузнком -->
                 </fieldset>
-                <button class="button-search" type="submit">Показать</button>            
+                <button type="submit" class="button-search">Показать</button>            
             </form>
         </section>
         <h2>Результаты поиска</h2>
         <section class="search-sorting">
-                <h3>Найдено:3</h3> 
+                <h3 class="catalog-title">Найдено:3</h3> 
                 <form class="search-sorting-form">
                     <legend>Сортировка:</legend>
                     <ul class="search-sorting-list">
                         <li class="search-sorting-item">
-                            <input type="radio" name="for-price" id="filter-for-price">
+                            <input type="radio" name="sorting" id="filter-for-price" checked>
                             <label for="filter-for-price">По цене</label>
                         </li>
                         <li class="search-sorting-item">
-                            <input type="radio" name="for-type" id="filter-for-type">
+                            <input type="radio" name="sorting" id="filter-for-type">
                             <label for="filter-for-type">По типу</label>
                         </li>
                         <li class="search-sorting-item">
-                            <input type="radio" name="for-rating" id="filter-for-rating">
+                            <input type="radio" name="sorting" id="filter-for-rating">
                             <label for="filter-for-rating">По рейтингу</label>
                         </li>
                     </ul>
-                    <button type="button"><img src="img/arrow-up.svg" alt="arrow-up"></button>
-                    <button type="button"><img src="img/arrow-down.svg" alt="arrow-down"></button>
+                    <button type="button" class="button_arrow"><img src="img/arrow-up.svg" alt="arrow-up"></button>
+                    <button type="button" class="button_arrow"><img src="img/arrow-down.svg" alt="arrow-down"></button>
                 </form>
         </section>
         <section class="search-result-item">
-            <h3>Amara resort & spa</h3>
+            <h3><a href="#" class="name-link">Amara resort & spa</a></h3>
             <img src="img/amara.jpg" width="135" height="90" alt="Amara resort & spa">
             <p>Гостиница</p>
             <p>от 4000 р.</p>
-            <button type="button button-info">Подробнее</button>
-            <button type="button button-order">Забронировать</button>
+            <button type="button" class="button-info">Подробнее</button>
+            <button type="button" class="button-order">Забронировать</button>
             <img src="img/4-stars.jpg" alt="4 stars"><!--Пока звездочки оставлю, обсудим на консультации.)Думаю, после лекции по гридам должно быть понятнее-->
-            <p>Рейтинг: 8,5</p>
+            <p class="rating">Рейтинг: 8,5</p>
         </section>
         <section class="search-result-item">
-            <h3>Desert quail inn</h3>
+            <h3><a href="#" class="name-link">Desert quail inn</a></h3>
             <img src="img/desert-quail-inn.jpg" width="135" height="90" alt="Desert quail inn">
             <p>Мотель</p>
             <p>от 3000 р.</p>
-            <button type="button button-info">Подробнее</button>
-            <button type="button button-order">Забронировать</button>
+            <button type="button" class="button-info">Подробнее</button>
+            <button type="button" class="button-order">Забронировать</button>
             <img src="img/3-stars.jpg" alt="3 stars">
-            <p>Рейтинг: 8,9</p>
+            <p class="rating">Рейтинг: 8,9</p>
         </section>
         <section class="search-result-item">
-            <h3>Villas at poco diablo</h3>
+            <h3><a href="#" class="name-link">Villas at poco diablo</a></h3>
             <img src="img/villas.jpg" width="135" height="90" alt="Amara resort & spa">
             <p>Апартаменты</p>
             <p>от 2000 р.</p>
-            <button type="button button-info">Подробнее</button>
-            <button type="button button-order">Забронировать</button>
+            <button type="button" class="button-info">Подробнее</button>
+            <button type="button" class="button-order">Забронировать</button>
             <img src="img/2-stars.jpg" alt="2 stars">
-            <p>Рейтинг: 9,2</p>
+            <p class="rating">Рейтинг: 9,2</p>
         </section>
   </main>
   <footer class="main-footer">
@@ -129,20 +132,20 @@
       <h2>Соцсети</h2>
       <ul>
         <li>
-        <a class="social-button" href="#">TWitter</a>
+        <a class="social-button" href="https://www.twitter.com"><img src="img/twitter.svg" width="17" height="15">TWitter</a>
         </li>
         <li>
-        <a class="social-button" href="#">Фейсбук</a>
+        <a class="social-button" href="https://www.facebook.com"><img src="img/fb.svg" width="12" height="22">Фейсбук</a>
         </li>
         <li>
-        <a class="social-button" href="#">Youtube</a>
+        <a class="social-button" href="https://www.youtube.com/"><img src="img/youtube.svg" width="20" height="16">Youtube</a>
         </li>
       </ul>
     </section>
     <section>
       <p>
         Website by
-        <a href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="113.98" height="39.78" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
+        <a class="htmlacademy" href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="114" height="40" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
       </p>
     </section>
   </footer>

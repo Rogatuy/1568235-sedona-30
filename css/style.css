@@ -3,6 +3,8 @@
     --basic-black:#000000;
     --basic-white:#ffffff;
     --basic-dark:#333333;
+    --basic-so-dark:#604E43;
+    --basic-extra-dark:#503E33;
     --basic-light:#81B3D2;
     --basic-dark-light:#669EC0;
     --basic-extra-dark-light:#5496BD;
@@ -10,6 +12,7 @@
     --basic-extra-light:#eeeeee;
     --basic-background-dark:#766357;
     --basic-footer-background:rgba(255, 255, 255, 0.9);
+    --basic-rating-color:#666666;
 
 }
 
@@ -73,6 +76,7 @@
     }
 
 .introduction-inscription {
+    font-weight: normal;
     font-size: 14px;
     line-height: 26px;
     color: var(--basic-dark);
@@ -124,6 +128,10 @@
     line-height: 24px; 
 }
 
+.appointment-info-secondary {
+    line-height: 24px;
+}
+
 /* footer*/
 
 .main-footer {
@@ -158,4 +166,157 @@
 
 .social-button:focus {
     background-color: var(--basic-extra-dark-light);
+}
+
+
+
+/* СATALOG */
+
+/* Search */
+
+.search {
+    background-image: url("../img/background-catalog.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.search-infrastructure-list,
+.search-type-list {
+    list-style: none;
+    /*color: var(--basic-white);*/
+}
+
+.search-form legend {
+    font-weight: bold;
+    font-size: 16px;
+    /*color: var(--basic-white);*/
+}
+
+.catalog-title {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+}
+
+.search-sorting-form legend {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.search-sorting-item input[type=radio] + label {
+    font-size: 12px;
+    line-height: 18px;
+    color: var(--basic-black);
+    opacity:0.3;
+    border-bottom:1px dashed var(--basic-light); /* не знаю, как сделать, чтобы подчеркивание было не с прозрачностью 0.3. единственный вариант, который приходит на ум, забить размер через rgba и там ее добавить. Так можно?*/
+}
+
+.search-sorting-item input[type=radio] {
+	display: none;
+}
+
+.search-sorting-item input[type=radio]:checked + label {
+    color: var(--basic-light);
+    border-bottom:none;
+    opacity:1;
+}
+
+.search-sorting-item input[type=radio]:hover + label {
+    color: var(--basic-light);
+    opacity:1;
+}
+
+.search-sorting-item input[type=radio]:active + label {
+    color: var(--basic-black);
+    opacity:1;
+    border-bottom:none;
+}
+
+.search-sorting-list {
+    list-style: none;
+}
+
+.button-search {
+    width: 137px;
+    height: 36px;
+    border: 2px solid var(--basic-white);
+    font-weight: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    background: transparent;
+    /*color: var(--basic-white);*/
+}
+
+.button-search:hover {
+    color: var(--basic-black);
+    background: var(--basic-white);
+}
+
+.button-info {
+    width: 110px;
+    height: 27px;
+    font-weight: bold;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    background: var(--basic-light);
+    color: var(--basic-white);
+    border:none; /*вроде бы все параметры взял, но кнопка не такая, как в примере. ширина и высота кажется не совпадают. не понимаю почему.возможно из-за каких-то изначальных настроек кнопки, которые я не обнулил?*/
+}
+
+.button-info:hover {
+    background: var(--basic-dark-light);
+}
+
+.button-info:active {
+    background: var(--basic-extra-dark-light);
+    /*opacity: 0.3; так же проблема, не знаю, как сделать текст прозрачным, а фон нет.*/
+}
+
+.button-order {
+    width: 142px;
+    height: 27px;
+    font-weight: bold;
+    font-size: inherit;
+    line-height: inherit;
+    text-transform: inherit;
+    background: var(--basic-background-dark);
+    color: var(--basic-white);
+    border:none; /*вроде бы все параметры взял, но кнопка не такая, как в примере. ширина и высота кажется не совпадают. не понимаю почему.*/
+}
+
+.button-order:hover {
+    background: var(--basic-so-dark);
+}
+
+.button-order:active {
+    background: var(--basic-extra-dark);
+    /*opacity: 0.3; так же проблема, не знаю, как сделать текст прозрачным, а фон нет.*/
+}
+
+.rating {
+    width: 110px;
+    height: 27px;
+    background: var(--basic-extra-blue);
+    color: var(--basic-rating-color);
+    text-align: center;
+    vertical-align: middle; /*почему-то все-равно по вертикали не выравнивается текст*/
+}
+
+.name-link {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    text-decoration: none;
+    color: var(--basic-black);
+}
+
+.name-link:hover {
+    color: var(--basic-light);
+}
+
+.name-link:active {
+    opacity:0.3;
 }
