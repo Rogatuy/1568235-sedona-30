@@ -11,19 +11,22 @@
   <body class="page-body">
   <header class="main-header">
     <nav class="main-navigation">
-      <ul class="site-navigation">
-        <li><a href="blank.html">Информация</a></li>
-        <li><a href="blank.html">Фото и видео</a></li>
-        <li><a href="blank.html">Карта штата</a></li>
-        <li><a href="catalog.html">Гостиницы</a></li>
-      </ul>
-      <a class="main-header-logo" hfer="index.html"><img src="img/logo.svg" width="130" height="70" alt="Логотип Седона"></a>
+      <div class="main-navigation-wrapper">
+        <ul class="site-navigation">
+          <li><a href="blank.html">Информация</a></li>
+          <li><a href="blank.html">Фото и видео</a></li>
+          <li><a class="main-header-logo" hfer="index.html"><img src="img/logo.svg" width="130" height="70" alt="Логотип Седона"></a></li>
+          <li><a href="blank.html">Карта штата</a></li>
+          <li><a href="catalog.html">Гостиницы</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
   <main class="container">
     <h1>Седона</h1>
     <section class="splash-screen">
       <img src="img/welcome.svg" width="457" height="351" alt="Надпись Седона">
+      <img src="img/background-index.svg" width="1200" height="57" alt="figure">
     </section>
     <section class="introduction">
     <p>Седона-небольшой городок в Аризоне,<br>заслуживающий большего!</p>
@@ -31,46 +34,54 @@
     </section>
       <h2>Почему Седона крутой город</h2>
       <section class="features-primary">      
-        <h3>Настоящий городок</h3>
+        <div class="features-primary-text">
+          <h3>Настоящий городок</h3>
           <p>-№1-</p>
           <p>Седона - не аттрацкион для туристов, там течёт своя жизнь </p>
-          <img src="img/cafe.jpg" width="800" height="256" alt="Кафе Седона">
+        </div>
+        <img src="img/cafe.jpg" width="800" height="256" alt="Кафе Седона">
       </section>
-      <section class="features-secondary">
+      <section class="features-secondary" >
+      <div>
           <img src="img/house.svg" width="75" height="70" alt="Дом">
           <h3>Жильё</h3> 
           <p>Рекомендуем пожить в настоящем мотеле, всё как в кино!</p>
-      </section>
-      <section class="features-secondary">
+      </div>
+      <div>
           <img src="img/burger.svg" width="75" height="70" alt="Бургер">
           <h3>Еда</h3>
           <p>Всегда заказывайте фирменный бургер, Вы не разочаруетесь!</p>
-      </section>
-      <section class="features-secondary">
+      </div>
+      <div>
           <img src="img/gift.svg" width="75" height="70" alt="Сувенир">
           <h3>Сувениры</h3>
           <p>Не только китайского, но и местного производства</p>
-      </section>
+      </div>
+    </section> <!--Решил здесь сделать одну большую секцию, и в ней 3 дива. чтобы грид раскидался. что скажешь?-->
       <section class="features-primary">
+        <img src="img/devil-bridge.jpg" width="800" height="256" alt="Мост дьявола">
+        <div class="features-primary-text">
           <h3>Там есть мост дьявола</h3>
           <p>-№2-</p>
           <p>Да, по нему можно пройти! Если конечно Вы осмелитесь</p>
-          <img src="img/devil-bridge.jpg" width="800" height="256" alt="Мост дьявола">
-      </section>
+        </div>
+        </section>
       <section class="features-ternary">
+        <div>
           <h3>Небольшая площадь</h3>
           <p>-№3-</p>
           <p>Все достопримечательности находятся очень близко</p>
-      </section>
-      <section class="features-ternary">
+        </div>
+        <div>
           <h3>Красивая дорога</h3>
           <p>-№4-</p>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
-      </section>
-      <section class="features-ternary">
+        </div>
+        <div>
           <h3>Мало туристов</h3>
           <p>-№5-</p>
           <p>Большинство едет в Гранд Каньон и толпится там</p>
+        </div>
       </section>
       <section class="appointment">
       <h2>Поиск гостинницы в седоне</h2>

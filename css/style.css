@@ -30,6 +30,17 @@
     color: var(--basic-black);
     text-transform: uppercase;
     background-color: var(--basic-white);
+
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    align-content: start;
+}
+
+/* Grid */
+
+.page {
+    height:100%;
 }
 
 /* Main-navigation */
@@ -38,35 +49,93 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
+    display: grid;
 }
 
+.main-navigation-wrapper {
+    display: grid;
+    width: 1200px;
+    justify-content: center;
+    margin: 0 40px;
+}
 
 .site-navigation {
-    list-style:none;
+    list-style: none;
+    display: grid;
+    grid-template-columns:73px 127px 200px 400px 200px 127px 73px; /* корректно ли в моем случае задавать ширины столбцов точными пикселями?*/
+    margin: 0;
+    padding: 0;
 }
+
+.site-navigation li:nth-child(1) {
+    grid-column: 2 / 3;
+    justify-self: start;
+    margin: 15px 0;
+}
+
+.site-navigation li:nth-child(2) {
+    grid-column: 3 / 4;
+    justify-self: end;
+    margin: 15px 0;
+}
+
+.site-navigation li:nth-child(3) {
+    grid-column: 4 / 5;
+    justify-self: center; /*почему-то картинка перестала быть кликабельной*/
+}
+
+.site-navigation li:nth-child(4) {
+    grid-column: 5 / 6;
+    justify-self: start;
+    margin: 15px 0;
+}
+
+.site-navigation li:nth-child(5) {
+    grid-column: 6 / 7;
+    justify-self: end;
+    margin: 15px 0;
+} /* Можно ли было так сделать? закинуть лого в часть списка (переделал в индексе) и так раскидать по гридам через номера элементов списка?*/
+
 
 .site-navigation a {
     text-decoration: none;
-    color:var (var(--basic-black))
+    color:var(--basic-black);
 }
 
 .site-navigation a:hover {
-    color:var(--basic-light);
+    color: var(--basic-light);
 }
 
 .site-navigation a:focus {
-    color:var(--basic-background-dark);
+    color: var(--basic-background-dark);
+}
+
+.container {
+    width: 1200px;
+    margin: 0 40px;
 }
 
 /* splash-screen */
 
 .splash-screen {
+    display:grid;
     background-image: url("../img/background.jpg");
     background-position: center center;
     background-repeat: no-repeat;
-     /*Пока затрудняюсь с вставкой второго фона, белой ломаной линии. 
-    если ее просто вставить, то все исчезает*/
+    height: 507px;
+    width: 1200px;
 }
+
+.splash-screen img:first-child {
+    justify-self: center;
+    margin-top: 77px;
+}
+
+.splash-screen img:nth-child(2) {
+    justify-self: center;
+    vertical-align: bottom; /*не получается притянуть к низу белую ломаную линию и почему-то она меньше по размеру чем фон. хотя ширина задана одинаковая 1200px*/
+}
+
 
 /* Introduction */
 
@@ -74,7 +143,21 @@
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
+    display: grid;
+    height: 216px;
     }
+
+.introduction p:first-child {
+    justify-self: center;
+    margin-top: 43px;
+    text-align: center;
+}
+
+.introduction p:last-child {
+    justify-self: center;
+    margin-bottom: 51px;
+}
+
 
 .introduction-inscription {
     font-weight: normal;
@@ -87,18 +170,30 @@
 
 .features-primary {
     background-color: var(--basic-light);
+    display: grid;
+    grid-template-columns: auto auto;
+    height: 256px;
     }
+
+.features-primary-text p {
+    justify-self: center; /*не получается отцентрировать текст в диве*/
+    color: var(--basic-white);
+    text-align: center;
+ }
+
+.features-secondary {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height:330px;
+}
 
 .features-primary h3 {
     font-weight: bold;
     font-size: 21px;
     line-height: 21px;
-    color: var(--basic-white)
+    color: var(--basic-white);
+    text-align: center;
     }
-
-.features-primary p {
-    color: var(--basic-white)
-}
 
 .features-secondary h3,
 .features-ternary h3 {
@@ -106,43 +201,60 @@
     font-size: 21px;
     line-height: 21px;
     color: var(--basic-black);
+    text-align: center;
 }
 
 .features-secondary p {
     font-weight: normal;
     color: var(--basic-dark);
+    text-align: center;
 }
 
 .features-ternary {
     background-color: var(--basic-extra-light);
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height:256px;
 }
 
 .features-ternary p {
-    color: var(--basic-dark)
+    color: var(--basic-dark);
+    text-align: center;
 }
 
 /* Appointment*/
 
+.appointment {
+    display:grid;
+}
+
 .appointment-info {
     font-weight: bold;
     font-size: 30px;
-    line-height: 24px; 
+    line-height: 24px;
+    text-align: center;
 }
 
 .appointment-info-secondary {
     line-height: 24px;
+    text-align: center;
 }
 
 /* footer*/
 
 .main-footer {
     background-color: var(--basic-footer-background);
+    display: grid;
+    grid-template-columns:73px 127px 200px 400px 200px 127px 73px;
+    height: 120px;
 }
 
 .footer-contacts {
     font-weight: bold;
     font-size: 21px;
-    line-height: 26px;  
+    line-height: 26px; 
+    grid-column: 2 / 4; 
+    justify-self: center;
 }
 
 .footer-phone {
@@ -152,6 +264,10 @@
     color:inherit;
 }
 
+.footer-social {
+    grid-column: 4 / 6; 
+    justify-self: center;
+}
 .social-button {
     color: var(--basic-white);
     background-color: var(--basic-light);
@@ -168,6 +284,15 @@
 .social-button:focus {
     background-color: var(--basic-extra-dark-light);
 }
+
+.footer-HTML {
+    grid-column: 6 / 8; 
+    justify-self: center;
+}
+
+
+
+
 
 
 
