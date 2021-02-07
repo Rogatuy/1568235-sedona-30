@@ -1,6 +1,7 @@
 /* Variables */
 :root {
     --basic-black:#000000;
+    --basic-black-rgba: rgba(0, 0, 0, 0.3);
     --basic-white:#ffffff;
     --basic-dark:#333333;
     --basic-so-dark:#604E43;
@@ -207,9 +208,8 @@
 .search-sorting-item input[type=radio] + label {
     font-size: 12px;
     line-height: 18px;
-    color: var(--basic-black);
-    opacity:0.3;
-    border-bottom:1px dashed var(--basic-light); /* не знаю, как сделать, чтобы подчеркивание было не с прозрачностью 0.3. единственный вариант, который приходит на ум, забить размер через rgba и там ее добавить. Так можно?*/
+    color: var(--basic-black-rgba);
+    border-bottom:1px dashed var(--basic-light);
 }
 
 .search-sorting-item input[type=radio] {
@@ -263,7 +263,7 @@
     text-transform: inherit;
     background: var(--basic-light);
     color: var(--basic-white);
-    border:none; /*вроде бы все параметры взял, но кнопка не такая, как в примере. ширина и высота кажется не совпадают. не понимаю почему.возможно из-за каких-то изначальных настроек кнопки, которые я не обнулил?*/
+    border:none;
 }
 
 .button-info:hover {
@@ -272,7 +272,11 @@
 
 .button-info:active {
     background: var(--basic-extra-dark-light);
-    /*opacity: 0.3; так же проблема, не знаю, как сделать текст прозрачным, а фон нет.*/
+}
+
+.button-info:active span{
+    opacity: 0.3;
+
 }
 
 .button-order {
@@ -284,7 +288,7 @@
     text-transform: inherit;
     background: var(--basic-background-dark);
     color: var(--basic-white);
-    border:none; /*вроде бы все параметры взял, но кнопка не такая, как в примере. ширина и высота кажется не совпадают. не понимаю почему.*/
+    border:none;
 }
 
 .button-order:hover {
@@ -293,7 +297,10 @@
 
 .button-order:active {
     background: var(--basic-extra-dark);
-    /*opacity: 0.3; так же проблема, не знаю, как сделать текст прозрачным, а фон нет.*/
+}
+
+.button-order:active span{
+    opacity: 0.3;
 }
 
 .rating {
@@ -302,7 +309,7 @@
     background: var(--basic-extra-blue);
     color: var(--basic-rating-color);
     text-align: center;
-    vertical-align: middle; /*почему-то все-равно по вертикали не выравнивается текст*/
+    /*почему-то все-равно по вертикали не выравнивается текст. Пока что не получилось. Оставлю этот комментарий, потом сделаю*/
 }
 
 .name-link {
