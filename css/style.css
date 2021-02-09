@@ -14,6 +14,7 @@
     --basic-background-dark:#766357;
     --basic-footer-background:rgba(255, 255, 255, 0.9);
     --basic-rating-color:#666666;
+    --basic-light-grey: #e5e5e5;
 
 }
 
@@ -49,11 +50,10 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
-    display: grid;
+
 }
 
 .main-navigation-wrapper {
-    display: grid;
     width: 1200px;
     justify-content: center;
     margin: 0 40px;
@@ -62,39 +62,11 @@
 .site-navigation {
     list-style: none;
     display: grid;
-    grid-template-columns:73px 127px 200px 400px 200px 127px 73px; /* корректно ли в моем случае задавать ширины столбцов точными пикселями?*/
+    grid-template-columns:300px 300px 300px 300px;
+    grid-template-rows: 70px;
     margin: 0;
     padding: 0;
 }
-
-.site-navigation li:nth-child(1) {
-    grid-column: 2 / 3;
-    justify-self: start;
-    margin: 15px 0;
-}
-
-.site-navigation li:nth-child(2) {
-    grid-column: 3 / 4;
-    justify-self: end;
-    margin: 15px 0;
-}
-
-.site-navigation li:nth-child(3) {
-    grid-column: 4 / 5;
-    justify-self: center; /*почему-то картинка перестала быть кликабельной*/
-}
-
-.site-navigation li:nth-child(4) {
-    grid-column: 5 / 6;
-    justify-self: start;
-    margin: 15px 0;
-}
-
-.site-navigation li:nth-child(5) {
-    grid-column: 6 / 7;
-    justify-self: end;
-    margin: 15px 0;
-} /* Можно ли было так сделать? закинуть лого в часть списка (переделал в индексе) и так раскидать по гридам через номера элементов списка?*/
 
 
 .site-navigation a {
@@ -119,84 +91,88 @@
 
 .splash-screen {
     display:grid;
-    background-image: url("../img/background.jpg");
-    background-position: center center;
-    background-repeat: no-repeat;
     height: 507px;
     width: 1200px;
+    background-image: url("../img/background-index.svg"), url("../img/background.jpg");
+    background-position: bottom center, center center;
+    background-repeat: no-repeat, no-repeat;
 }
 
-.splash-screen img:first-child {
-    justify-self: center;
-    margin-top: 77px;
+.splash-screen img {
+    margin: auto;
+}    
+
+/*features*/
+
+.features {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+    grid-template-rows: 216px 256px 330px 256px 256px;
 }
-
-.splash-screen img:nth-child(2) {
-    justify-self: center;
-    vertical-align: bottom; /*не получается притянуть к низу белую ломаную линию и почему-то она меньше по размеру чем фон. хотя ширина задана одинаковая 1200px*/
-}
-
-
-/* Introduction */
 
 .introduction {
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
-    display: grid;
-    height: 216px;
+    grid-row: 1 / 2;
+    grid-column: 1 / -1;    
     }
-
-.introduction p:first-child {
-    justify-self: center;
-    margin-top: 43px;
-    text-align: center;
-}
-
-.introduction p:last-child {
-    justify-self: center;
-    margin-bottom: 51px;
-}
-
 
 .introduction-inscription {
     font-weight: normal;
     font-size: 14px;
     line-height: 26px;
     color: var(--basic-dark);
+    margin:auto;
 }
 
-/*features*/
-
-.features-primary {
+.features-first {
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
     background-color: var(--basic-light);
-    display: grid;
-    grid-template-columns: auto auto;
-    height: 256px;
-    }
-
-.features-primary-text p {
-    justify-self: center; /*не получается отцентрировать текст в диве*/
-    color: var(--basic-white);
-    text-align: center;
- }
-
-.features-secondary {
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height:330px;
 }
 
-.features-primary h3 {
+.features-first h3
+.features-fifth h3 {
     font-weight: bold;
     font-size: 21px;
     line-height: 21px;
     color: var(--basic-white);
     text-align: center;
-    }
+}
 
-.features-secondary h3,
-.features-ternary h3 {
+.features-first p 
+.features-fifth p {
+    color: var(--basic-white);
+    text-align: center;
+}
+
+.features-first-image {
+    grid-row: 2 / 3;
+    grid-column: 2 / 4;  
+}
+
+.features-second {
+    grid-row: 3 / 4;
+    grid-column: 1 / 2; 
+}
+
+.features-third {
+    grid-row: 3 / 4;
+    grid-column: 2 / 3; 
+}
+
+.features-fourth {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4; 
+}
+
+.features-second h3,
+.features-third h3,
+.features-fourth h3,
+.features-sixth h3,
+.features-seventh h3,
+.features-eighth h3 {
     font-weight: bold;
     font-size: 21px;
     line-height: 21px;
@@ -204,28 +180,54 @@
     text-align: center;
 }
 
-.features-secondary p {
+.features-second p,
+.features-third p,
+.features-fourth p,
+.features-sixth p,
+.features-seventh p,
+.features-eighth p {
     font-weight: normal;
     color: var(--basic-dark);
     text-align: center;
 }
 
-.features-ternary {
-    background-color: var(--basic-extra-light);
-    display:grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height:256px;
+.features-fifth-image {
+    grid-row: 4 / 5;
+    grid-column: 1 / 3; 
 }
 
-.features-ternary p {
-    color: var(--basic-dark);
-    text-align: center;
+.features-fifth {
+    grid-row: 4 / 5;
+    grid-column: 3 / 4; 
+    background-color: var(--basic-light);
+}
+
+.features-sixth {
+    grid-row: 5 / 6;
+    grid-column: 1 / 2; 
+    background-color: var(--basic-extra-light);
+}
+
+.features-seventh {
+    grid-row: 5 / 6;
+    grid-column: 2 / 3; 
+    background-color: var(--basic-extra-light);   /*не понимаю, почему он не идет рядом с предыдущим, а идет вниз*/
+}
+
+.features-eighth {
+    grid-row: 5 / 6;
+    grid-column: 3 / 4;
+    background-color: var(--basic-extra-light);
+    
 }
 
 /* Appointment*/
 
 .appointment {
     display:grid;
+    grid-template-columns: 1200px;
+    grid-template-rows: 291px; /*сделал грид, но он перекинулся наверх, почему-то. понятия не имею почему.*/
+    
 }
 
 .appointment-info {
@@ -233,11 +235,16 @@
     font-size: 30px;
     line-height: 24px;
     text-align: center;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+
 }
 
 .appointment-info-secondary {
     line-height: 24px;
     text-align: center;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
 }
 
 /* footer*/
@@ -300,21 +307,35 @@
 
 /* Search */
 
+.page-catalog {
+    display: grid;
+    align-content: start;
+    outline: 5px solid rgba(255, 0, 0, 0.7);
+    outline-offset: -5px;}
+
 .search {
     background-image: url("../img/background-catalog.jpg");
     background-position: center center;
     background-repeat: no-repeat;
 }
 
+.search-form{
+    display: grid;
+    grid-template-columns: 300px 300px 1fr;
+
+}
+
 .search-infrastructure-list,
 .search-type-list {
     list-style: none;
+    padding-left:73px;
     /*color: var(--basic-white);*/
 }
 
 .search-form legend {
     font-weight: bold;
     font-size: 16px;
+    padding-left:73px;
     /*color: var(--basic-white);*/
 }
 
@@ -322,6 +343,21 @@
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
+}
+
+.search-sorting {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.search-sorting-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.search-sorting-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /*не слишком хитро я сделал? в три грида запихнул всю эту строку?*/
 }
 
 .search-sorting-form legend {
@@ -361,6 +397,54 @@
 .search-sorting-list {
     list-style: none;
 }
+
+.search-result-item {
+    padding-left:73px;
+    outline: 1px solid var(--basic-light-grey);
+    display:grid;
+    grid-template-columns: 208px 237px 400px 355px;
+    grid-template-rows: 50px 50px 50px;
+}
+
+.search-result-item h3 {
+    grid-column: 2 / 4;
+    grid-row: 1 / 2;
+}
+
+.search-sorting-item .photo-housing {
+    grid-column: 1 / 2;
+    grid-row: 1 / 4;
+}
+
+.search-sorting-item .star {
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+.search-sorting-item .type{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.search-sorting-item .price{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+}
+
+.search-sorting-item .rating{
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+}
+
+.search-sorting-item .button-info{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+}
+
+.search-sorting-item .button-order{
+    grid-column: 3 / 4;
+    grid-row: 3 / 4;
+} /*что-то не то делаю. не раскидывается по красоте на грид, но не понимаю, почему. */
 
 .button-search {
     width: 137px;
@@ -433,8 +517,7 @@
     height: 27px;
     background: var(--basic-extra-blue);
     color: var(--basic-rating-color);
-    text-align: center;
-    /*почему-то все-равно по вертикали не выравнивается текст. Пока что не получилось. Оставлю этот комментарий, потом сделаю*/
+    
 }
 
 .name-link {

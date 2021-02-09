@@ -11,16 +11,18 @@
   <body class="page-body">
   <header class="main-header">
     <nav class="main-navigation">
-      <ul class="site-navigation">
-        <li><a href="blank.html">Информация</a></li>
-        <li><a href="blank.html">Фото и видео</a></li>
-        <li><a href="blank.html">Карта штата</a></li>
-        <li><a href="catalog.html">Гостиницы</a></li>
-      </ul>
+      <div class="main-navigation-wrapper">
+        <ul class="site-navigation">
+          <li><a href="blank.html">Информация</a></li>
+          <li><a href="blank.html">Фото и видео</a></li>
+          <li><a href="blank.html">Карта штата</a></li>
+          <li><a href="catalog.html">Гостиницы</a></li>
+        </ul>
+      </div>
       <a class="main-header-logo" hfer="index.html"><img src="img/logo.svg" width="130" height="70" alt="Логотип Седона"></a>
     </nav>
   </header>
-  <main class="container">
+  <main class="container page-catalog">
       <h1>Варианты размещения</h1>
         <section class="search">
              <h2>Фильтр помещений</h2>
@@ -62,8 +64,8 @@
                 <fieldset>
                     <legend>Стоимость в сутки (р):</legend>
                     <!-- Форма с полузнком -->
-                </fieldset>
-                <button type="submit" class="button-search">Показать</button>            
+                    <button type="submit" class="button-search">Показать</button> 
+                </fieldset>        
             </form>
         </section>
         <h2>Результаты поиска</h2>
@@ -85,38 +87,40 @@
                             <label for="filter-for-rating">По рейтингу</label>
                         </li>
                     </ul>
-                    <button type="button" class="button_arrow"><img src="img/arrow-up.svg" alt="arrow-up"></button>
-                    <button type="button" class="button_arrow"><img src="img/arrow-down.svg" alt="arrow-down"></button>
+                    <section>
+                      <button type="button" class="button_arrow"><img src="img/arrow-up.svg" alt="arrow-up"></button>
+                      <button type="button" class="button_arrow"><img src="img/arrow-down.svg" alt="arrow-down"></button>
+                    </section>
                 </form>
         </section>
         <section class="search-result-item">
+            <img class="photo-housing" src="img/amara.jpg" width="135" height="90" alt="Amara resort & spa">
             <h3><a href="#" class="name-link">Amara resort & spa</a></h3>
-            <img src="img/amara.jpg" width="135" height="90" alt="Amara resort & spa">
-            <p>Гостиница</p>
-            <p>от 4000 р.</p>
+            <p class="type">Гостиница</p>
+            <p class="price">от 4000 р.</p>
             <button type="button" class="button-info"><span>Подробнее</span></button>
             <button type="button" class="button-order"><span>Забронировать</span></button>
-            <img src="img/4-stars.jpg" alt="4 stars"><!--Пока звездочки оставлю, обсудим на консультации.)Думаю, после лекции по гридам должно быть понятнее-->
+            <img class="star" src="img/star.svg" alt="star">
             <p class="rating">Рейтинг: 8,5</p>
         </section>
         <section class="search-result-item">
+            <img class="photo-housing" src="img/desert-quail-inn.jpg" width="135" height="90" alt="Desert quail inn">
             <h3><a href="#" class="name-link">Desert quail inn</a></h3>
-            <img src="img/desert-quail-inn.jpg" width="135" height="90" alt="Desert quail inn">
-            <p>Мотель</p>
-            <p>от 3000 р.</p>
+            <p class="type">Мотель</p>
+            <p class="price">от 3000 р.</p>
             <button type="button" class="button-info"><span>Подробнее</span></button>
             <button type="button" class="button-order"><span>Забронировать</span></button>
-            <img src="img/3-stars.jpg" alt="3 stars">
+            <img class="star" src="img/star.svg" alt="star">
             <p class="rating">Рейтинг: 8,9</p>
         </section>
         <section class="search-result-item">
+            <img class="photo-housing" src="img/villas.jpg" width="135" height="90" alt="Amara resort & spa">
             <h3><a href="#" class="name-link">Villas at poco diablo</a></h3>
-            <img src="img/villas.jpg" width="135" height="90" alt="Amara resort & spa">
-            <p>Апартаменты</p>
-            <p>от 2000 р.</p>
+            <p class="type">Апартаменты</p>
+            <p class="price">от 2000 р.</p>
             <button type="button" class="button-info"><span>Подробнее</span></button>
             <button type="button" class="button-order"><span>Забронировать</span></button>
-            <img src="img/2-stars.jpg" alt="2 stars">
+            <img class="star" src="img/star.svg" alt="star">
             <p class="rating">Рейтинг: 9,2</p>
         </section>
   </main>
@@ -142,7 +146,7 @@
         </li>
       </ul>
     </section>
-    <section>
+    <section class="footer-HTML">
       <p>
         Website by
         <a class="htmlacademy" href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="114" height="40" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
