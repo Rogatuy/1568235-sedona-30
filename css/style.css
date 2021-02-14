@@ -3,6 +3,7 @@
     --basic-black:#000000;
     --basic-black-rgba: rgba(0, 0, 0, 0.3);
     --basic-white:#ffffff;
+    --basic-white-rgba: rgba(255, 255, 255, 0.3);
     --basic-dark:#333333;
     --basic-so-dark:#604E43;
     --basic-extra-dark:#503E33;
@@ -39,6 +40,19 @@
     align-content: start;
 }
 
+.visually-hidden {
+    position:absolute;
+	width:1px;
+	height:1px;
+	margin:-1px;
+	border:0;
+	padding:0;
+	white-space: nowrap;
+	clip-path: inset(100%);
+	clip: rect(0 0 0 0);
+	overflow:hidden;
+}
+
 /* Grid */
 
 .page {
@@ -62,14 +76,32 @@
 .site-navigation {
     list-style: none;
     display: grid;
-    grid-template-columns:300px 300px 300px 300px;
+    grid-template-columns:228px 228px 228px 228px;
     grid-template-rows: 70px;
-    margin: 0;
+    margin: 0 72px;
     padding: 0;
+    outline: 5px solid rgba(0, 255, 0, 0.7);
+    outline-offset: -5px;
 }
 
-.site-navigation li {
-    justify-self: center;
+.site-navigation li:first-child,
+.site-navigation li:nth-child(2){
+    justify-self: left;
+    outline: 5px solid rgba(255, 115, 0, 0.7);
+    outline-offset: -5px;
+}
+
+.site-navigation li:nth-child(2){
+    margin-right: 144px;
+}
+
+.site-navigation li:nth-child(3),
+.site-navigation li:last-child {
+    justify-self: right;
+}
+
+.site-navigation li:nth-child(3) {
+    margin-left:144px;
 }
 
 .site-navigation a {
@@ -263,16 +295,31 @@
 .main-footer {
     background-color: var(--basic-footer-background);
     display: grid;
-    grid-template-columns:73px 127px 200px 400px 200px 127px 73px;
+    grid-template-columns:400px 400px 400px;
     height: 120px;
+    outline: 5px solid rgba(0, 255, 0, 0.7);
+    outline-offset: -5px;
 }
 
 .footer-contacts {
     font-weight: bold;
     font-size: 21px;
     line-height: 26px; 
-    grid-column: 2 / 4; 
+    grid-column: 1 / 2; 
     justify-self: center;
+    margin:auto 0;
+}
+
+.footer-contacts p:first-of-type {
+    text-align: center;
+    margin-top: 23px;
+    margin-bottom: 9px;
+}
+
+.footer-contacts p:last-of-type {
+    text-align: center;
+    margin:0;
+    padding:0;
 }
 
 .footer-phone {
@@ -283,32 +330,60 @@
 }
 
 .footer-social {
-    grid-column: 4 / 6; 
+    grid-column: 2 / 3; 
     justify-self: center;
+    margin:auto 0;
 }
+
 .social-button {
     color: var(--basic-white);
     background-color: var(--basic-light);
+    width: 48px;
+    height: 46px;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.footer-social li{
+.footer-social ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 151px;
+    margin:0 auto;
+    padding:0;
     list-style: none;
+    align-items: center;
 }
-  
+
 .social-button:hover{
     background-color: var(--basic-dark-light);
 }
 
-.social-button:focus {
+.social-button:focus{
     background-color: var(--basic-extra-dark-light);
 }
 
+.social-button:focus img {
+    fill: black; /*почему-то не работает изменение цвета при нажатии. не пойму почему */
+}
+
 .footer-HTML {
-    grid-column: 6 / 8; 
+    grid-column: 3 / 4; 
     justify-self: center;
 }
 
+.footer-HTML p {
+    margin: 0; 
+}
 
+.footer-HTML b {
+    margin-top: 49px; /*не понимаю, почему он не притягивает к самому верху с отступом 49. */
+}
+
+.htmlacademy img {
+    margin-top: 38px;
+}
 
 
 
@@ -324,8 +399,9 @@
 
 .search {
     background-image: url("../img/background-catalog.jpg");
-    background-position: center center;
+    background-position:center center;
     background-repeat: no-repeat;
+    background-color: var(--basic-rating-color);
 }
 
 .search-form{
@@ -412,6 +488,12 @@
 
 .search-sorting-list {
     list-style: none;
+}
+
+.button-arrow {
+    padding: 0;
+    border: none;
+    background-color: transparent;
 }
 
 .search-result-item {

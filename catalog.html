@@ -23,9 +23,9 @@
     </nav>
   </header>
   <main class="container page-catalog">
-      <h1>Варианты размещения</h1>
+      <h1 class="visually-hidden">Варианты размещения</h1>
         <section class="search">
-             <h2>Фильтр помещений</h2>
+             <h2 class="visually-hidden">Фильтр помещений</h2>
              <form class="search-form" method="get" action="https://echo.htmlacademy.ru">
                 <fieldset>
                     <legend>Инфрастуктура:</legend>
@@ -68,7 +68,7 @@
                 </fieldset>        
             </form>
         </section>
-        <h2>Результаты поиска</h2>
+        <h2 class="visually-hidden">Результаты поиска</h2>
         <section class="search-sorting">
                 <h3>Найдено:3</h3> 
                 <form class="search-sorting-form">
@@ -88,8 +88,8 @@
                         </li>
                     </ul>
                     <section>
-                      <button type="button" class="button_arrow"><img src="img/arrow-up.svg" alt="arrow-up"></button>
-                      <button type="button" class="button_arrow"><img src="img/arrow-down.svg" alt="arrow-down"></button>
+                      <button type="button" class="button-arrow"><img src="img/arrow-up.svg" alt="arrow-up"></button>
+                      <button type="button" class="button-arrow"><img src="img/arrow-down.svg" alt="arrow-down"></button>
                     </section>
                 </form>
         </section>
@@ -124,33 +124,34 @@
             <p class="rating">Рейтинг: 9,2</p>
         </section>
   </main>
-  <footer class="main-footer">
+  <footer class="main-footer container">
     <section class="footer-contacts">
-      <h2>Контактные данные</h2>
+      <h2 class="visually-hidden">Контактные данные</h2>
       <p>
-      #visitsedona <br>
+      #visitsedona
+      </p>
+      <p>
       Тел: <a class="footer-phone" href="tel:+74956660166">+7 (495) 666-01-66</a>
       </p>
     </section>
     <section class="footer-social">
-      <h2>Соцсети</h2>
-      <ul>
+      <h2 class="visually-hidden">Соцсети</h2>
+      <ul class="social-conteiner">
         <li>
-        <a class="social-button" href="https://www.twitter.com"><img src="img/twitter.svg" width="17" height="15">TWitter</a>
+        <a class="social-button" href="https://www.twitter.com"><img src="img/twitter.svg" width="17" height="15"><span class="visually-hidden">Twitter</span></a>
         </li>
         <li>
-        <a class="social-button" href="https://www.facebook.com"><img src="img/fb.svg" width="12" height="22">Фейсбук</a>
+        <a class="social-button" href="https://www.facebook.com"><img src="img/fb.svg" width="12" height="22"><span class="visually-hidden">Facebook</span></a>
         </li>
         <li>
-        <a class="social-button" href="https://www.youtube.com/"><img src="img/youtube.svg" width="20" height="16">Youtube</a>
+        <a class="social-button" href="https://www.youtube.com/"><img src="img/youtube.svg" width="20" height="16"><span class="visually-hidden">Youtube</span></a>
         </li>
       </ul>
     </section>
     <section class="footer-HTML">
       <p>
-        Website by
-        <a class="htmlacademy" href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="114" height="40" alt="Лого htmlacademy"></a> <!--Такая же история с размерами картинки. Норм все?-->
-      </p>
+        <b>Website by</b>      
+        <a class="htmlacademy" href="https://htmlacademy.ru"><img src="img/logo-htmlacademy.svg" width="114" height="40" alt="Лого htmlacademy"></a>
     </section>
   </footer>
   </body>
