@@ -33,7 +33,6 @@
     color: var(--basic-black);
     text-transform: uppercase;
     background-color: var(--basic-white);
-
     min-height: 100%;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
@@ -77,31 +76,30 @@
     list-style: none;
     display: grid;
     grid-template-columns:228px 228px 228px 228px;
-    grid-template-rows: 70px;
+    grid-template-rows: 56px;
     margin: 0 72px;
     padding: 0;
-    outline: 5px solid rgba(0, 255, 0, 0.7);
-    outline-offset: -5px;
 }
 
 .site-navigation li:first-child,
 .site-navigation li:nth-child(2){
-    justify-self: left;
-    outline: 5px solid rgba(255, 115, 0, 0.7);
-    outline-offset: -5px;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 15px 0;
+    height: 56px;
+    width: 228px;
 }
 
-.site-navigation li:nth-child(2){
-    margin-right: 144px;
-}
+
 
 .site-navigation li:nth-child(3),
 .site-navigation li:last-child {
-    justify-self: right;
-}
-
-.site-navigation li:nth-child(3) {
-    margin-left:144px;
+    box-sizing: border-box;
+    padding: 15px 0;
+    text-align: right;
+    height: 56px;
+    width: 228px;
+    margin-left: 144px; /* не очень понял, почему нужно и третью и четвертую ячейку маргином двигать. если двигать только третью, то четвертая налезает на третью. можешь пояснить почему так?*/ 
 }
 
 .site-navigation a {
@@ -119,6 +117,15 @@
 
 .container {
     width: 1200px;
+    margin:0 auto;
+}
+
+.main-header-logo-image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin:auto;
 }
 
 /* splash-screen */
@@ -149,6 +156,7 @@
     line-height: 26px;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
+   
 }
 
 .introduction p:last-child {
@@ -157,12 +165,16 @@
     line-height: 26px;
     color: var(--basic-dark);
     text-align: center;
+    padding-top: 45px;
     padding-bottom: 51px;
+    margin:0;
 }
 
 .introduction p:first-child {
     text-align: center;
     padding-top: 43px;
+    font-style: normal;
+    margin:0;
 }
 
 .features-city {
@@ -178,12 +190,22 @@
     line-height: 21px;
     color: var(--basic-white);
     text-align: center;
+    padding-top: 48.5px;
+    margin:0;
 }
 
-.features-city p, 
+.features-city p {
+    color: var(--basic-white);
+    text-align: center;
+    margin:0;
+    padding-top: 24px;
+}
+
 .features-bridge p {
     color: var(--basic-white);
     text-align: center;
+    margin:0;
+    padding-top: 25px;
 }
 
 .features-city-image {
@@ -208,7 +230,17 @@
 
 .features-housing h3,
 .features-food h3,
-.features-gift h3,
+.features-gift h3 {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 21px;
+    color: var(--basic-black);
+    text-align: center;
+    padding-top: 28px;
+    padding-bottom: 25px;
+    margin: 0;
+}
+
 .features-area h3,
 .features-road h3,
 .features-tourist h3 {
@@ -217,31 +249,43 @@
     line-height: 21px;
     color: var(--basic-black);
     text-align: center;
-    padding-top: 28px;
-    padding-bottom: 25px;
-    margin:0;
+    padding-top: 45px;
+    margin: 0;
 }
 
 .features-housing p,
 .features-food p,
-.features-gift p,
+.features-gift p {
+    font-weight: normal;
+    color: var(--basic-dark);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
 .features-area p,
 .features-road p,
 .features-tourist p {
     font-weight: normal;
     color: var(--basic-dark);
     text-align: center;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding-top: 25px;
 }
 
 .features-housing img,
-.features-food img,
-.features-gift img {
+.features-food img {
     display: block;
     margin-left:auto;
     margin-right:auto;
     margin-top:60px;
+}
+
+.features-gift img {
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:55px;
 }
 
 .features-bridge-image {
@@ -285,9 +329,11 @@
     font-size: 30px;
 }
 
-.appointment p:last-of-type {
+.appointment-info-secondary {
     line-height: 24px;
     text-align: center;
+    margin: 0;
+    padding-top: 30px;
 }
 
 /* footer*/
@@ -297,8 +343,6 @@
     display: grid;
     grid-template-columns:400px 400px 400px;
     height: 120px;
-    outline: 5px solid rgba(0, 255, 0, 0.7);
-    outline-offset: -5px;
 }
 
 .footer-contacts {
@@ -306,14 +350,14 @@
     font-size: 21px;
     line-height: 26px; 
     grid-column: 1 / 2; 
+    margin-left: 73px; /*если не добавить этот маргин, то текст встанет не туда. а по ТЗ весь текст должен быть по середине. это ошибка или нет?*/
     justify-self: center;
-    margin:auto 0;
 }
 
 .footer-contacts p:first-of-type {
     text-align: center;
     margin-top: 23px;
-    margin-bottom: 9px;
+    margin-bottom: 8px;
 }
 
 .footer-contacts p:last-of-type {
@@ -349,23 +393,27 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 151px;
+    min-width: 151px; /*сделал минимальную ширину, проверил, если добавить еще иконки, выглядит так же адекватно и красиво*/
     margin:0 auto;
     padding:0;
     list-style: none;
     align-items: center;
 }
 
-.social-button:hover{
+.footer-social li {
+    margin: 0 3px; /* если добавить еще иконки, выглядит так же адекватно и красиво*/
+}
+
+.social-button:hover {
     background-color: var(--basic-dark-light);
 }
 
-.social-button:focus{
+.social-button:focus {
     background-color: var(--basic-extra-dark-light);
 }
 
-.social-button:focus img {
-    fill: black; /*почему-то не работает изменение цвета при нажатии. не пойму почему */
+.social-button:focus path {
+    fill: var(--basic-white-rgba); /*почему-то не работает изменение цвета при нажатии. не пойму почему */
 }
 
 .footer-HTML {
@@ -378,11 +426,12 @@
 }
 
 .footer-HTML b {
-    margin-top: 49px; /*не понимаю, почему он не притягивает к самому верху с отступом 49. */
+    margin-top: 10px; /*не понимаю, почему он не притягивает к самому верху с отступом 49. */
 }
 
 .htmlacademy img {
     margin-top: 38px;
+    margin-right: 80px;
 }
 
 
@@ -402,6 +451,7 @@
     background-position:center center;
     background-repeat: no-repeat;
     background-color: var(--basic-rating-color);
+    height: 217px;
 }
 
 .search-form{
@@ -423,13 +473,15 @@
 .search-form legend {
     font-weight: bold;
     font-size: 16px;
-    padding-left:73px;
+    padding-left: 60px;
     color: var(--basic-white);
 }
 
 .search-sorting {
     display: grid;
     grid-template-columns: 200px 1fr;
+    grid-template-rows: 86px;
+    /* border: 3px solid green; */
 }
 
 .search-sorting h3 {
@@ -437,25 +489,36 @@
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
+    vertical-align: middle;
+    margin-top: 27px;
 }
 
 .search-sorting-form {
     display: grid;
-    grid-template-columns: 190px 1fr 100px;
+    grid-template-columns: 150px 1fr 200px;
+    /* border: 3px solid yellow; */
 }
 
 .search-sorting-list {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr; /*не слишком хитро я сделал? в три грида запихнул всю эту строку?*/
+    grid-template-columns: 82px 84px 1fr; /*не слишком хитро я сделал? в три грида запихнул всю эту строку?*/
+    margin: 0;
+    padding: 0;
+    /* border: 3px solid yellow; */
+}
+
+.search-sorting-list li {
+    margin-top: 31px;
+    padding-left: 0;
 }
 
 .search-sorting-form legend {
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
-    padding-left: 46px;
-    margin-top:auto;
-    margin-bottom:auto;
+    padding-left: 36px;
+    padding-top: 31px;
+    margin: 0;
 }
 
 .search-sorting-item input[type=radio] + label {
@@ -490,59 +553,99 @@
     list-style: none;
 }
 
+.search-sorting-form .arrow {
+    justify-self: center;
+    vertical-align: middle;
+    /* border:2px solid yellow; */
+
+}
+
 .button-arrow {
     padding: 0;
     border: none;
     background-color: transparent;
+    margin-top: 35px;
+}
+
+.arrow button:first-child {
+    padding-left: 20px;
+}
+
+.arrow button:last-child {
+    padding-left: 10px;
 }
 
 .search-result-item {
     padding-left:73px;
     display:grid;
-    grid-template-columns: 208px 139px 1fr 183px;
-    grid-template-rows: 50px 50px 50px;
+    grid-template-columns: 208px 139px 670px 183px;
+    grid-template-rows: 50px 43px 57px;
+    border-top: 1px solid var(--basic-light-grey);
+    border-bottom: 1px solid var(--basic-light-grey);
 }
 
 .search-result-item h3 {
     grid-column: 2 / 4;
     grid-row: 1 / 2;
-    margin:0;
+    margin: 0;
+    padding: 0;
+    margin-left: -45px; /*не понимаю, почему эта колонка не приклеивается к ячейке с фото, а имеет отступ. не смог его найти. пришлось задать отрицательный маргин. не думаю, что это правильно*/
+    margin-top: auto;
 }
 
 .search-result-item .photo-housing {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
+    padding-top: 30px;
 }
 
 .search-result-item .star {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
+    margin-top: 29px;
 }
 
 .search-result-item .type{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    margin: 0;
+    margin-left: -45px;
+    margin-top: 6px;
+
 }
 
 .search-result-item .price{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    margin: 0;
+    margin-left: -65px; 
+    margin-top: 6px;
 }
 
 .search-result-item .rating{
     grid-column: 4 / 5;
     grid-row: 3 / 4;
     margin:0;
+    margin-left: -73px; /*бесят эти кривые отрицательные маргины)))спаси меня, что с этой сеткой не так?*/
+    text-align: center;
+    width: 110px;
+    height: 27px;
+    background: var(--basic-extra-blue);
+    color: var(--basic-rating-color);
+    /* не получается расположить текст внутри этого прямоугольника красиво. он чуть не влезает в нужное место. помоги, пожалуйста */
 }
 
 .search-result-item .button-info{
     grid-column: 2 / 3;
     grid-row: 3 / 4;
+    margin: 0;
+    margin-left: -45px;
 }
 
 .search-result-item .button-order{
     grid-column: 3 / 4;
     grid-row: 3 / 4;
+    margin-left: -65px; 
 } 
 
 .button-search {
@@ -584,7 +687,6 @@
 
 .button-info:active span{
     opacity: 0.3;
-
 }
 
 .button-order {
@@ -609,14 +711,6 @@
 
 .button-order:active span{
     opacity: 0.3;
-}
-
-.rating {
-    width: 110px;
-    height: 27px;
-    background: var(--basic-extra-blue);
-    color: var(--basic-rating-color);
-    
 }
 
 .name-link {
