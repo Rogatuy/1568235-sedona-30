@@ -16,15 +16,17 @@
     --basic-footer-background:rgba(255, 255, 255, 0.9);
     --basic-rating-color:#666666;
     --basic-light-grey: #e5e5e5;
+    --basic-so-grey: #BDBBBC;
+    --basic-toggle: #ABABAB;
+    --basic-toggle-rgba: rgba(171, 171, 171, 0.3);
+
 
 }
 
 /* Global */
 
 .page-body {
-    min-width: 1200px;
     margin: 0;
-    padding: 0 40px;
     box-sizing: border-box;
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 14px;
@@ -118,6 +120,10 @@
 .container {
     width: 1200px;
     margin:0 auto;
+}
+
+.main-header-logo {
+    display: block; /*я правильно сделал картинку блоком, чтобы она была ссылкой или нет?*/
 }
 
 .main-header-logo-image {
@@ -341,8 +347,9 @@
 .main-footer {
     background-color: var(--basic-footer-background);
     display: grid;
-    grid-template-columns:400px 400px 400px;
+    grid-template-columns:327px 400px 327px;
     height: 120px;
+    justify-content: center;
 }
 
 .footer-contacts {
@@ -350,20 +357,22 @@
     font-size: 21px;
     line-height: 26px; 
     grid-column: 1 / 2; 
-    margin-left: 73px; /*если не добавить этот маргин, то текст встанет не туда. а по ТЗ весь текст должен быть по середине. это ошибка или нет?*/
     justify-self: center;
+    margin: 0;
+    padding: 0;
 }
 
 .footer-contacts p:first-of-type {
     text-align: center;
-    margin-top: 23px;
-    margin-bottom: 8px;
+    margin-bottom: 9px;
+
 }
 
 .footer-contacts p:last-of-type {
     text-align: center;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
+    
 }
 
 .footer-phone {
@@ -382,8 +391,8 @@
 .social-button {
     color: var(--basic-white);
     background-color: var(--basic-light);
-    width: 48px;
-    height: 46px;  
+    width: 46px;
+    height: 48px;  
     display: flex;
     align-items: center;
     justify-content: center;
@@ -413,27 +422,27 @@
 }
 
 .social-button:focus path {
-    fill: var(--basic-white-rgba); /*почему-то не работает изменение цвета при нажатии. не пойму почему */
+    fill: var(--basic-white-rgba);
 }
 
-.footer-HTML {
+.footer-html {
     grid-column: 3 / 4; 
     justify-self: center;
+    margin: auto 0;
 }
 
-.footer-HTML p {
-    margin: 0; 
+.htmlacademy:hover path {
+    fill: var(--basic-light);
 }
 
-.footer-HTML b {
-    margin-top: 10px; /*не понимаю, почему он не притягивает к самому верху с отступом 49. */
+.htmlacademy:active path {
+    fill: var(--basic-so-grey);
 }
 
-.htmlacademy img {
-    margin-top: 38px;
-    margin-right: 80px;
+.footer-html b {
+    display: inline-block;
+    margin-bottom: 0px; /*непонимаю, как поднять его на уровень логотипа. перепробовал всё, что только мог*/
 }
-
 
 
 
@@ -457,31 +466,209 @@
 .search-form{
     display: grid;
     grid-template-columns: 220px 350px 1fr;
+    color: var(--basic-white);
 }
 
 .search-form fieldset {
     border:none;
 }
 
+.search-form fieldset:nth-child(2) {
+    margin-left:36px;
+}
+
+.search-form fieldset:last-child {
+    margin-left: 230px;
+}
+
+.search-infrastructure-item label,
+.search-type-item label {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    margin-bottom: 25px;
+    padding-left: 60px;
+  }
+
 .search-infrastructure-list,
 .search-type-list {
     list-style: none;
-    padding-left:73px;
-    color: var(--basic-white);
+    margin: 0;
 }
 
 .search-form legend {
     font-weight: bold;
     font-size: 16px;
+    margin-top: 25px;
+    margin-bottom: 20px;
     padding-left: 60px;
+}
+
+.range-filter {
+    width: 317px;
+}
+
+.range-controls {
+    position: relative;
+    height: 24px;
+    padding-top: 20px;
+    padding-bottom: 11px;
+}
+
+.range-controls .scale {
+    height: 2px;
+    background: var(--basic-white-rgba);
+}
+
+.min-price {
+    display: inline-block;
+    padding-left: 65px;
+}
+
+.max-price {
+    display: inline-block;
+    padding-left: 46px;
+}
+
+.line {
+    display: inline-block;
+    position: relative;
+    width: 2px;
+    height: 22px;
+    left: -2px;
+    top: 6px;
+    background-color: var(--basic-white);
+    padding: 0;
+    margin: 0;
+}
+
+.range-controls .bar {
+    width: 82%;
+    height: 2px;
+    background: var(--basic-white);
+}
+
+.range-controls .toggle {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    padding: 0;
+    border: 9px solid var(--basic-white);
+    background-color: var(--basic-toggle);
+    border-radius: 50%;
+    box-shadow: 0 2px 0 0 var(--basic-toggle-rgba);
+    cursor: pointer;
+}
+
+.range-controls .toggle-min {
+    left: 0px;
+}
+
+.range-controls .toggle-max {
+    left: 252px;
+}
+
+.range-controls .toggle-min:focus,
+.range-controls .toggle-max:focus {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    padding: 0;
+    border: 11px solid var(--basic-white);
+    background-color: var(--basic-toggle);
+    border-radius: 50%;
+    box-shadow: 0 2px 0px 0 var(--basic-toggle-rgba);
+    cursor: pointer; /*чего-то ерунда вышла. фокус не работает. поясни, пожалуйста, что не так делаю?*/
+}
+
+.price-controls {
+    width: 314px;
+    height: 33px;
+    border: 2px solid var(--basic-white);
+    border-radius: 2px;
+}
+
+.price-controls input {
     color: var(--basic-white);
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 70px;
+    border: none;
+}
+
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.no-arrow,
+.no-arrow:hover,
+.no-arrow:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.search-price legend {
+    padding: 0;
+    margin-bottom: 7px;
+}
+
+.search-type-list label {
+    padding-left: 62px;
+}
+
+.filter-input-checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/off.svg");
+}
+
+.filter-input-checkbox:checked + label::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 27px;
+    height:23px;
+    background-image: url("../img/on.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+}
+
+.filter-input-checkbox:disabled + label::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 0;
+    width: 23px;
+    height: 23px;
+    background-image: url("../img/off-disabled.svg");
+}
+
+.filter-input-checkbox:checked:disabled + label::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    width: 27px;
+    height:23px;
+    background-image: url("../img/on-disabled.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
 }
 
 .search-sorting {
     display: grid;
     grid-template-columns: 200px 1fr;
     grid-template-rows: 86px;
-    /* border: 3px solid green; */
 }
 
 .search-sorting h3 {
@@ -496,15 +683,13 @@
 .search-sorting-form {
     display: grid;
     grid-template-columns: 150px 1fr 200px;
-    /* border: 3px solid yellow; */
 }
 
 .search-sorting-list {
     display: grid;
-    grid-template-columns: 82px 84px 1fr; /*не слишком хитро я сделал? в три грида запихнул всю эту строку?*/
+    grid-template-columns: 82px 84px 1fr;
     margin: 0;
     padding: 0;
-    /* border: 3px solid yellow; */
 }
 
 .search-sorting-list li {
@@ -554,10 +739,8 @@
 }
 
 .search-sorting-form .arrow {
-    justify-self: center;
+    margin-left: 92px;
     vertical-align: middle;
-    /* border:2px solid yellow; */
-
 }
 
 .button-arrow {
@@ -567,8 +750,16 @@
     margin-top: 35px;
 }
 
-.arrow button:first-child {
-    padding-left: 20px;
+.button-arrow:hover path {
+  fill: var(--basic-black);
+}
+
+.button-arrow:active path {
+    fill: var(--basic-light);
+}
+
+.button-arrow:visited path {
+    fill: var(--basic-light);
 }
 
 .arrow button:last-child {
@@ -576,9 +767,8 @@
 }
 
 .search-result-item {
-    padding-left:73px;
     display:grid;
-    grid-template-columns: 208px 139px 670px 183px;
+    grid-template-columns: 208px 145px 664px 183px;
     grid-template-rows: 50px 43px 57px;
     border-top: 1px solid var(--basic-light-grey);
     border-bottom: 1px solid var(--basic-light-grey);
@@ -589,36 +779,62 @@
     grid-row: 1 / 2;
     margin: 0;
     padding: 0;
-    margin-left: -45px; /*не понимаю, почему эта колонка не приклеивается к ячейке с фото, а имеет отступ. не смог его найти. пришлось задать отрицательный маргин. не думаю, что это правильно*/
     margin-top: auto;
+    margin-left: 29px;
 }
 
 .search-result-item .photo-housing {
     grid-column: 1 / 2;
     grid-row: 1 / 4;
     padding-top: 30px;
+    margin-left: auto;
 }
 
 .search-result-item .star {
     grid-column: 4 / 5;
     grid-row: 1 / 2;
-    margin-top: 29px;
+    margin-top: 29px;    
+}
+
+.star-2 {
+    display: block;
+    background-image: url(../img/star.svg);
+    width: 40px;
+    height: 17px;
+    margin-left: 70px; /*можешь пояснить, почему здесь не работает margin-right? если его создавать, то блок прибивается влево при любом правом маргине*/
+    background-repeat: space;
+}
+
+.star-3 {
+    display: block;
+    background-image: url(../img/star.svg);
+    width: 63px;
+    height: 17px;
+    margin-left: 47px;
+    background-repeat: space;
+}
+
+.star-4 {
+    display: block;
+    background-image: url(../img/star.svg);
+    width: 86px;
+    height: 17px;
+    margin-left: 24px;
+    background-repeat: space;
 }
 
 .search-result-item .type{
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     margin: 0;
-    margin-left: -45px;
     margin-top: 6px;
-
+    margin-left: 29px;
 }
 
 .search-result-item .price{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     margin: 0;
-    margin-left: -65px; 
     margin-top: 6px;
 }
 
@@ -626,26 +842,24 @@
     grid-column: 4 / 5;
     grid-row: 3 / 4;
     margin:0;
-    margin-left: -73px; /*бесят эти кривые отрицательные маргины)))спаси меня, что с этой сеткой не так?*/
     text-align: center;
     width: 110px;
     height: 27px;
     background: var(--basic-extra-blue);
     color: var(--basic-rating-color);
-    /* не получается расположить текст внутри этого прямоугольника красиво. он чуть не влезает в нужное место. помоги, пожалуйста */
+    line-height: 27px;
 }
 
 .search-result-item .button-info{
     grid-column: 2 / 3;
     grid-row: 3 / 4;
     margin: 0;
-    margin-left: -45px;
+    margin-left: 29px;
 }
 
 .search-result-item .button-order{
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    margin-left: -65px; 
 } 
 
 .button-search {
@@ -658,6 +872,7 @@
     text-transform: inherit;
     background: transparent;
     color: var(--basic-white);
+    margin-left: 85px;
 }
 
 .button-search:hover {
@@ -726,5 +941,6 @@
 }
 
 .name-link:active {
+    color: var(--basic-black);
     opacity:0.3;
 }
