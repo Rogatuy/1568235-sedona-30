@@ -19,8 +19,7 @@
     --basic-so-grey: #BDBBBC;
     --basic-toggle: #ABABAB;
     --basic-toggle-rgba: rgba(171, 171, 171, 0.3);
-
-
+    --basic-really-grey: #EBEBEB;
 }
 
 /* Global */
@@ -122,16 +121,17 @@
     margin:0 auto;
 }
 
-.main-header-logo {
-    display: block; /*я правильно сделал картинку блоком, чтобы она была ссылкой или нет?*/
-}
-
 .main-header-logo-image {
     position: absolute;
     left: 0;
     right: 0;
     top: 0;
     margin:auto;
+}
+
+.disabled {
+    pointer-events: none;
+    cursor: default;
 }
 
 /* splash-screen */
@@ -342,6 +342,223 @@
     padding-top: 30px;
 }
 
+.search-sedona {
+    text-align: center;
+}
+
+.search-sedona-button {
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    text-transform: inherit;
+    width: 568px;
+    height: 86px;
+    color: var(--basic-white);
+    background-color: var(--basic-background-dark);
+    padding: 0 auto;
+    margin: 45px 0 auto auto;
+    border: none;
+}
+
+.search-sedona-button:hover {
+    background-color: var(--basic-so-dark);
+}
+
+.search-sedona-button:active {
+    background-color: var(--basic-extra-dark);
+    color: var(--basic-white-rgba);
+    padding: 0;
+}
+
+.style-placeholder::-webkit-input-placeholder {
+    color: var(--basic-black);
+}
+
+.style-placeholder::-moz-placeholder{
+    color: var(--basic-black);
+}
+.style-placeholder :-moz-placeholder {
+    color: var(--basic-black);
+}
+.style-placeholder:-ms-input-placeholder {
+    color: var(--basic-black);
+} 
+
+.map {
+    display: block;
+    height: 594px;
+    width: 1200px;
+}
+
+.map iframe {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.search-sedona-form {
+    position: absolute;
+    left: 476px;
+    width: 568px;
+    height: 395px;
+    margin: 0 auto;
+    
+
+}
+
+.search-sedona-form form {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 55px;
+    background-color: var(--basic-white);
+}
+
+.search-sedona-form label {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: inherit;
+}
+
+.search-sedona-form .data-start {
+    padding-right: 19px;
+}
+
+.search-sedona-form .data-end {
+    padding-right: 16px;
+}
+
+.calendar-start,
+.calendar-end {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    right: 56px;
+}
+
+
+.calendar-start {
+    top: 64px;
+}
+
+.calendar-end {
+    top: 129px;
+}
+
+.union,
+.rectangle {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+}
+
+.sedona-quantity-old .rectangle {
+    left: 171px;
+    bottom: 180px;
+}
+
+.sedona-quantity-old .union {
+    left: 248px;
+    bottom: 176px;
+}
+
+.sedona-quantity-young .rectangle {
+    left: 405px;
+    bottom: 180px;
+}
+
+.sedona-quantity-young .union {
+    left: 481px;
+    bottom: 176px;
+}
+
+.union:hover path,
+.rectangle:hover rect,
+.calendar-start:hover path,
+.calendar-end:hover path {
+    fill: var(--basic-black);
+}
+
+.union:active path,
+.rectangle:active rect,
+.calendar-start:active path,
+.calendar-end:active path {
+    fill: var(--basic-light);
+    padding: 0; /*почему-то тут не работает паддинг. картинка всё-равно смещается на 1px в сторону. на обычных кнопках это работало. Пытался гуглить, ничего не нашел(*/
+}
+
+.search-sedona-form input {
+    box-sizing: border-box;
+    width: 346px;
+    height: 38px;
+    background-color: var(--basic-extra-blue);
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 26px;
+    text-transform: inherit;
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 13px;
+    margin-bottom: 30px;
+}
+
+.search-sedona-form input:hover {
+    background-color: var(--basic-really-grey);
+    border: none; /*почему-то не выходит по стайлгайду сделать. там написано при наведении другой фон. но инпуты не очень работают на наведение. Что не так?*/
+}
+
+.search-sedona-form input:focus {
+    background-color: var(--basic-white);
+    border: 2px solid var(--basic-light-grey); /*вроде бы норм, но мне кажется там вторая рамка все же есть. или я ошибаюсь?*/
+}
+
+.search-sedona-form p {
+    margin: 0;
+    padding: 0;
+}
+
+.sedona-quantity-old label {
+    padding-right: 36px;
+}
+
+.sedona-quantity-young label {
+    padding-right: 23px;
+    padding-left: 53px;
+}
+
+.sedona-quantity-old input,
+.sedona-quantity-young input {
+    width: 114px;
+    height: 38px;
+    text-transform: inherit;
+    padding: 0 39px;
+    text-align: center;
+}
+
+.sedona-form-button {
+    width: 458px;
+    height: 58px;
+    border: none;
+    background-color: var(--basic-light);
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 26px;
+    color:var(--basic-white);
+    text-transform: inherit;
+    margin-top: 25px;
+}
+
+.sedona-form-button:hover {
+    background-color: var(--basic-dark-light);
+} 
+
+.sedona-form-button:active {
+    background-color: var(--basic-extra-dark-light);
+    color: var(--basic-white-rgba);
+    padding: 0;
+}
+
 /* footer*/
 
 .main-footer {
@@ -350,6 +567,13 @@
     grid-template-columns:327px 400px 327px;
     height: 120px;
     justify-content: center;
+}
+
+.main-footer-up {
+    position: absolute;
+    top: 2642px;
+    z-index: 1;
+    left: 160px;
 }
 
 .footer-contacts {
@@ -431,6 +655,11 @@
     margin: auto 0;
 }
 
+.footer-html a{
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .htmlacademy:hover path {
     fill: var(--basic-light);
 }
@@ -440,8 +669,8 @@
 }
 
 .footer-html b {
-    display: inline-block;
-    margin-bottom: 0px; /*непонимаю, как поднять его на уровень логотипа. перепробовал всё, что только мог*/
+    padding-right: 5px;
+    vertical-align: middle;
 }
 
 
@@ -552,7 +781,6 @@
 .range-controls .toggle {
     position: absolute;
     top: 10px;
-    left: 0;
     width: 4px;
     height: 4px;
     padding: 0;
@@ -571,11 +799,10 @@
     left: 252px;
 }
 
-.range-controls .toggle-min:focus,
-.range-controls .toggle-max:focus {
+.range-controls .toggle-min:hover,
+.range-controls .toggle-max:hover {
     position: absolute;
     top: 10px;
-    left: 0;
     width: 4px;
     height: 4px;
     padding: 0;
@@ -583,7 +810,7 @@
     background-color: var(--basic-toggle);
     border-radius: 50%;
     box-shadow: 0 2px 0px 0 var(--basic-toggle-rgba);
-    cursor: pointer; /*чего-то ерунда вышла. фокус не работает. поясни, пожалуйста, что не так делаю?*/
+    cursor: pointer;
 }
 
 .price-controls {
@@ -796,12 +1023,21 @@
     margin-top: 29px;    
 }
 
+.star-1 {
+    display: block;
+    background-image: url(../img/star.svg);
+    width: 27px;
+    height: 17px;
+    margin-left: 93px;
+    background-repeat: space;
+}
+
 .star-2 {
     display: block;
     background-image: url(../img/star.svg);
     width: 40px;
     height: 17px;
-    margin-left: 70px; /*можешь пояснить, почему здесь не работает margin-right? если его создавать, то блок прибивается влево при любом правом маргине*/
+    margin-left: 70px;
     background-repeat: space;
 }
 
@@ -820,6 +1056,15 @@
     width: 86px;
     height: 17px;
     margin-left: 24px;
+    background-repeat: space;
+}
+
+.star-5 {
+    display: block;
+    background-image: url(../img/star.svg);
+    width: 109px;
+    height: 17px;
+    margin-left: 1px;
     background-repeat: space;
 }
 
