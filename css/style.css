@@ -20,13 +20,14 @@
     --basic-toggle: #ABABAB;
     --basic-toggle-rgba: rgba(171, 171, 171, 0.3);
     --basic-really-grey: #EBEBEB;
+    --basic-shadow-page: rgba(0, 1, 1, 0.2);
+    --basic-shadow-form: rgba(0, 1, 1, 0.15);
 }
 
 /* Global */
 
 .page-body {
-    margin: 0;
-    /* box-sizing: border-box; */
+    margin: 0 auto;
     font-family: "PT Sans", Arial, sans-serif;
     font-size: 14px;
     font-weight: normal;
@@ -34,31 +35,36 @@
     color: var(--basic-black);
     text-transform: uppercase;
     background-color: var(--basic-extra-light);
-    min-height: 100%;
+    /* min-height: 100%; */
+    width: 1200px;
     display: grid;
     grid-template-rows: min-content 1fr min-content;
     align-content: start;
-    box-shadow: 10px 10px 0 var(--basic-black);
+    position: relative;
+    box-shadow: 0px 5px 15px var(--basic-shadow-page)
 }
 
 .visually-hidden {
-    position:absolute;
-	width:1px;
-	height:1px;
-	margin:-1px;
-	border:0;
-	padding:0;
+    position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
 	white-space: nowrap;
 	clip-path: inset(100%);
 	clip: rect(0 0 0 0);
-	overflow:hidden;
+	overflow: hidden;
 }
 
-/* Grid */
+.container {
+    background-color: var(--basic-white);
+}
 
 .page {
     height:100%;
 }
+
 
 /* Main-navigation */
 
@@ -66,7 +72,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 26px;
-
+    position: relative;
 }
 
 .main-navigation-wrapper {
@@ -84,7 +90,7 @@
 }
 
 .site-navigation li:first-child,
-.site-navigation li:nth-child(2){
+.site-navigation li:nth-child(2) {
     text-align: left;
     box-sizing: border-box;
     padding: 15px 0;
@@ -101,7 +107,7 @@
     text-align: right;
     height: 56px;
     width: 228px;
-    margin-left: 144px; /* не очень понял, почему нужно и третью и четвертую ячейку маргином двигать. если двигать только третью, то четвертая налезает на третью. можешь пояснить почему так?*/ 
+    margin-left: 144px;
 }
 
 .site-navigation a {
@@ -117,13 +123,6 @@
     color: var(--basic-background-dark);
 }
 
-.container {
-    width: 1200px;
-    margin:0 auto;
-    background-color: var(--basic-white);
-
-}
-
 .main-header-logo-image {
     position: absolute;
     left: 0;
@@ -132,9 +131,10 @@
     margin:auto;
 }
 
-.disabled {
+.disabled a {
     pointer-events: none;
     cursor: default;
+    color: var(--basic-background-dark);
 }
 
 /* splash-screen */
@@ -166,7 +166,6 @@
     line-height: 26px;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
-   
 }
 
 .introduction p:last-child {
@@ -201,13 +200,13 @@
     color: var(--basic-white);
     text-align: center;
     padding-top: 48.5px;
-    margin:0;
+    margin: 0;
 }
 
 .features-city p {
     color: var(--basic-white);
     text-align: center;
-    margin:0;
+    margin: 0;
     padding-top: 24px;
 }
 
@@ -287,16 +286,16 @@
 .features-housing img,
 .features-food img {
     display: block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
 }
 
 .features-gift img {
     display: block;
-    margin-left:auto;
-    margin-right:auto;
-    margin-top:55px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 55px;
 }
 
 .features-bridge-image {
@@ -327,14 +326,13 @@
     grid-row: 5 / 6;
     grid-column: 3 / 4;
     background-color: var(--basic-extra-light);
-    
 }
 
 /* Appointment*/
 
 .appointment p:first-of-type {
     padding-top: 58px;
-    margin:0;
+    margin: 0;
     line-height: 24px;
     text-align: center;
     font-weight: bold;
@@ -395,8 +393,7 @@
     width: 568px;
     height: 395px;
     margin: 0 auto;
-    
-
+    box-shadow: 0px 7px 15px var(--basic-shadow-form);
 }
 
 .search-sedona-form form {
@@ -421,21 +418,17 @@
     padding-right: 16px;
 }
 
+.search-sedona-form p {
+    position: relative;
+}
+
 .calendar-start,
 .calendar-end {
     border: none;
     background-color: transparent;
     position: absolute;
-    right: 56px;
-}
-
-
-.calendar-start {
-    top: 63px;
-}
-
-.calendar-end {
-    top: 129px;
+    right: 0;
+    top: 8px;
 }
 
 .sedona-quantity-young,
@@ -478,6 +471,7 @@
 .calendar-start:hover path,
 .calendar-end:hover path {
     fill: var(--basic-black);
+    
 }
 
 .union:active path,
@@ -485,7 +479,13 @@
 .calendar-start:active path,
 .calendar-end:active path {
     fill: var(--basic-light);
-    padding: 0; /*почему-то тут не работает паддинг. картинка всё-равно смещается на 1px в сторону. на обычных кнопках это работало. Пытался гуглить, ничего не нашел(*/
+    padding: 0;
+}
+
+.calendar-start:active,
+.calendar-end:active {
+    right: 1px;
+    top: 8px;
 }
 
 .search-sedona-form input {
@@ -512,6 +512,7 @@
 .search-sedona-form input:focus {
     background-color: var(--basic-white);
     border: 2px solid var(--basic-light-grey); 
+    outline: none;
 }
 
 .search-sedona-form p {
@@ -560,19 +561,44 @@
     padding: 0;
 }
 
+/* Placeholder-black_start */
+
+.in-put::-moz-placeholder {
+    color: var(--basic-black);
+    opacity: 1;
+} 
+
+.in-put::placeholder {
+    color: var(--basic-black);
+}
+
+.in-put::-webkit-input-placeholder {
+    color: var(--basic-black);
+}
+
+.in-put::-ms-input-placeholder {
+    color: var(--basic-black);
+}
+
+.in-put:-ms-input-placeholder {
+    color: var(--basic-black);
+}
+
+/* Placeholder-black_end */
+
 /* footer*/
 
 .main-footer {
     background-color: var(--basic-white);
     display: grid;
-    grid-template-columns:327px 400px 327px;
+    grid-template-columns: 327px 400px 327px;
     height: 120px;
     justify-content: center;
 }
 
-.main-footer-up {
+.footer-up {
     position: absolute;
-    top: 2642px;
+    bottom: 0;
     z-index: 1;
     left: 0;
     right: 0;
@@ -606,13 +632,13 @@
     font-weight: bold;
     font-size: 21px;
     line-height: 26px;
-    color:inherit;
+    color: inherit;
 }
 
 .footer-social {
     grid-column: 2 / 3; 
     justify-self: center;
-    margin:auto 0;
+    margin: auto 0;
 }
 
 .social-button {
@@ -629,15 +655,15 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    min-width: 151px; /*сделал минимальную ширину, проверил, если добавить еще иконки, выглядит так же адекватно и красиво*/
-    margin:0 auto;
-    padding:0;
+    min-width: 151px;
+    margin: 0 auto;
+    padding: 0;
     list-style: none;
     align-items: center;
 }
 
 .footer-social li {
-    margin: 0 3px; /* если добавить еще иконки, выглядит так же адекватно и красиво*/
+    margin: 0 3px;
 }
 
 .social-button:hover {
@@ -677,8 +703,6 @@
 }
 
 
-
-
 /* СATALOG */
 
 /* Search */
@@ -689,28 +713,28 @@
 
 .search {
     background-image: url("../img/background-catalog.jpg");
-    background-position:center center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-color: var(--basic-rating-color);
-    height: 217px;
+    min-height: 217px;
 }
 
 .search-form{
     display: grid;
-    grid-template-columns: 220px 350px 1fr;
+    grid-template-columns: 256px 384px 1fr;
     color: var(--basic-white);
 }
 
 .search-form fieldset {
-    border:none;
+    border: none;
 }
 
 .search-form fieldset:nth-child(2) {
-    margin-left:36px;
+    margin-left: 0px;
 }
 
 .search-form fieldset:last-child {
-    margin-left: 230px;
+    margin-left: 160px;
 }
 
 .search-infrastructure-item label,
@@ -721,7 +745,8 @@
     user-select: none;
     margin-bottom: 25px;
     padding-left: 60px;
-  }
+    padding-right: 20px;
+}
 
 .search-infrastructure-list,
 .search-type-list {
@@ -954,7 +979,7 @@
     font-size: 12px;
     line-height: 18px;
     color: var(--basic-black-rgba);
-    border-bottom:1px dashed var(--basic-light);
+    border-bottom: 1px dashed var(--basic-light);
 }
 
 .search-sorting-item input[type=radio] {
@@ -963,19 +988,19 @@
 
 .search-sorting-item input[type=radio]:checked + label {
     color: var(--basic-light);
-    border-bottom:none;
-    opacity:1;
+    border-bottom: none;
+    opacity: 1;
 }
 
 .search-sorting-item input[type=radio]:hover + label {
     color: var(--basic-light);
-    opacity:1;
+    opacity: 1;
 }
 
 .search-sorting-item input[type=radio]:active + label {
     color: var(--basic-black);
-    opacity:1;
-    border-bottom:none;
+    opacity: 1;
+    border-bottom: none;
 }
 
 .search-sorting-list {
@@ -1011,7 +1036,7 @@
 }
 
 .search-result-item {
-    display:grid;
+    display: grid;
     grid-template-columns: 208px 145px 664px 183px;
     grid-template-rows: 50px 43px 57px;
     border-top: 1px solid var(--basic-light-grey);
@@ -1103,7 +1128,7 @@
 .search-result-item .rating{
     grid-column: 4 / 5;
     grid-row: 3 / 4;
-    margin:0;
+    margin: 0;
     text-align: center;
     width: 110px;
     height: 27px;
@@ -1151,7 +1176,7 @@
     text-transform: inherit;
     background: var(--basic-light);
     color: var(--basic-white);
-    border:none;
+    border: none;
 }
 
 .button-info:hover {
@@ -1175,7 +1200,7 @@
     text-transform: inherit;
     background: var(--basic-background-dark);
     color: var(--basic-white);
-    border:none;
+    border: none;
 }
 
 .button-order:hover {
