@@ -157,7 +157,7 @@
 .features {
     display: grid;
     grid-template-columns: 400px 400px 400px;
-    grid-template-rows: 216px 256px 330px 256px 256px;
+    /* grid-template-rows: 1fr 256px 330px 256px 256px; */
 }
 
 .introduction {
@@ -166,6 +166,9 @@
     line-height: 26px;
     grid-row: 1 / 2;
     grid-column: 1 / -1;
+    padding: 10px;
+    min-height: 216px;
+    box-sizing: border-box;
 }
 
 .introduction p:last-child {
@@ -175,13 +178,12 @@
     color: var(--basic-dark);
     text-align: center;
     padding-top: 45px;
-    padding-bottom: 51px;
     margin:0;
 }
 
 .introduction p:first-child {
     text-align: center;
-    padding-top: 43px;
+    padding-top: 33px;
     font-style: normal;
     margin:0;
 }
@@ -190,6 +192,9 @@
     grid-row: 2 / 3;
     grid-column: 1 / 2;
     background-color: var(--basic-light);
+    min-height: 256px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-city h3,
@@ -199,7 +204,7 @@
     line-height: 21px;
     color: var(--basic-white);
     text-align: center;
-    padding-top: 48.5px;
+    padding-top: 38.5px;
     margin: 0;
 }
 
@@ -221,21 +226,33 @@
     grid-row: 2 / 3;
     grid-column: 2 / 4;
     background-color: var(--basic-light);
+    margin: 0;
+    padding: 0;
+    height: 256px; /* почему-то через минимальную высоту ширина автоматически получается не 256 а 261,3. Откуда берутся эти 4 пикселя понятия не имею.(*/
 }
 
 .features-housing {
     grid-row: 3 / 4;
     grid-column: 1 / 2; 
+    min-height: 330px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-food {
     grid-row: 3 / 4;
     grid-column: 2 / 3; 
+    min-height: 330px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-gift {
     grid-row: 3 / 4;
     grid-column: 3 / 4; 
+    min-height: 330px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-housing h3,
@@ -259,7 +276,7 @@
     line-height: 21px;
     color: var(--basic-black);
     text-align: center;
-    padding-top: 45px;
+    padding-top: 35px;
     margin: 0;
 }
 
@@ -273,6 +290,7 @@
     padding: 0;
 }
 
+
 .features-area p,
 .features-road p,
 .features-tourist p {
@@ -280,7 +298,14 @@
     color: var(--basic-dark);
     text-align: center;
     margin: 0;
-    padding-top: 25px;
+    padding-top: 20px;
+}
+
+
+.features-area p:first-of-type,
+.features-road p:first-of-type,
+.features-tourist p:first-of-type  {
+    padding-top: 30px;
 }
 
 .features-housing img,
@@ -288,44 +313,57 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .features-gift img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 55px;
+    margin-top: 45px;
 }
 
 .features-bridge-image {
     grid-row: 4 / 5;
     grid-column: 1 / 3;
     background-color: var(--basic-light);
+    height: 256px;
 }
 
 .features-bridge {
     grid-row: 4 / 5;
     grid-column: 3 / 4; 
     background-color: var(--basic-light);
+    min-height: 256px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-area {
     grid-row: 5 / 6;
     grid-column: 1 / 2; 
     background-color: var(--basic-extra-light);
+    min-height: 256px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-road {
     grid-row: 5 / 6;
     grid-column: 2 / 3; 
     background-color: var(--basic-extra-light);
+    min-height: 256px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .features-tourist {
     grid-row: 5 / 6;
     grid-column: 3 / 4;
     background-color: var(--basic-extra-light);
+    min-height: 256px;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Appointment*/
@@ -568,10 +606,6 @@
     opacity: 1;
 } 
 
-.in-put::placeholder {
-    color: var(--basic-black);
-}
-
 .in-put::-webkit-input-placeholder {
     color: var(--basic-black);
 }
@@ -581,6 +615,10 @@
 }
 
 .in-put:-ms-input-placeholder {
+    color: var(--basic-black);
+}
+
+.in-put::placeholder {
     color: var(--basic-black);
 }
 
@@ -633,6 +671,7 @@
     font-size: 21px;
     line-height: 26px;
     color: inherit;
+    text-decoration: none;
 }
 
 .footer-social {
@@ -781,20 +820,26 @@
 .min-price {
     display: inline-block;
     padding-left: 65px;
+    vertical-align: middle;
+    padding-top: 5px;
 }
 
 .max-price {
     display: inline-block;
     padding-left: 46px;
+    vertical-align: middle;
+    padding-top: 5px;
+    
 }
 
 .line {
     display: inline-block;
+    vertical-align: middle;
     position: relative;
     width: 2px;
     height: 22px;
     left: -2px;
-    top: 6px;
+    top: 4px;
     background-color: var(--basic-white);
     padding: 0;
     margin: 0;
@@ -966,7 +1011,7 @@
     padding-left: 0;
 }
 
-.search-sorting-form legend {
+.search-sorting-form p {
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
@@ -1038,7 +1083,7 @@
 .search-result-item {
     display: grid;
     grid-template-columns: 208px 145px 664px 183px;
-    grid-template-rows: 50px 43px 57px;
+    grid-template-rows: 1fr 43px 57px;
     border-top: 1px solid var(--basic-light-grey);
     border-bottom: 1px solid var(--basic-light-grey);
 }
@@ -1048,7 +1093,7 @@
     grid-row: 1 / 2;
     margin: 0;
     padding: 0;
-    margin-top: auto;
+    padding-top: 23px;
     margin-left: 29px;
 }
 
